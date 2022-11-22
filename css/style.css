@@ -30,7 +30,8 @@ body {
   align-items: center;
   position: sticky;
   top: 0;
-  z-index: 1;
+  z-index: 2;
+  background-color: #fff;
 }
 
 .main {
@@ -223,6 +224,89 @@ body {
   from {
     opacity: 0;
     transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+/* start of styles for prints page */
+
+.page-title {
+  font-family: soleil, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 40px;
+  margin-top: 24px;
+  padding-left: 16px;
+}
+
+.main-text {
+  font-family: soleil, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 29px;
+  padding-left: 16px;
+  padding-right: 16px;
+  line-height: 46px;
+  margin-top: 7px;
+}
+
+.faq {
+  border-bottom: 1px solid black;
+  cursor: pointer;
+}
+.faq h3 {
+  font-family: soleil, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 29px;
+}
+.faq-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.faq-container {
+  width: 92.23%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 48px;
+}
+.faq-text {
+  font-family: soleil, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 29px;
+  line-height: 46px;
+  margin-top: 5px;
+  max-height: 0px;
+  overflow: hidden;
+  transition: max-height 1.4s ease;
+}
+
+.faq.active .faq-text {
+  max-height: max-content;
+  animation: fade 1s ease-in-out;
+}
+
+.faq.active svg {
+  transform: rotate(180deg);
+}
+
+svg {
+  transition: transform 0.5s ease-in;
+}
+
+#returns {
+  margin-top: 15px;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
   }
   to {
     opacity: 1;

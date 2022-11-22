@@ -91,3 +91,7 @@ burger.addEventListener("click", () => {
   // animate the burger icon
   burger.classList.toggle("toggle");
 });
+
+// end of code for displaying the menu when the hamburger icon is clicked
+
+// start of code for animating
