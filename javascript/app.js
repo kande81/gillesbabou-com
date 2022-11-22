@@ -1,6 +1,7 @@
 const imageContainer = document.querySelector(".image-con");
 const images = document.querySelectorAll(".image-slides");
 const caption = document.querySelector(".caption");
+console.log("indie js file");
 const captionTitle = caption.querySelector(".image-title");
 const numberOfImages = images.length;
 const imageNum = document.querySelector(".image-num");
@@ -11,11 +12,8 @@ const firstImage = images[0];
 captionTitle.innerHTML = firstImage.dataset.title;
 imageNum.innerHTML = firstImage.dataset.number;
 imageContainer.addEventListener("touchend", (e) => {
-  console.log("touchend");
   setTimeout(() => {
     images.forEach((image) => {
-      console.log(image.dataset.title, image.getBoundingClientRect().left);
-
       if (
         image.getBoundingClientRect().left >= 14 &&
         image.getBoundingClientRect().left <= 16
@@ -65,6 +63,7 @@ imageContainer.addEventListener("mousemove", (e) => {
   // get the change in mouse position
   changeInMouse = e.movementX;
   // scroll the image container by the current scroll position minus the change in mouse position
+  console.log(e.pageX);
   imageContainer.scrollLeft = scrollLeft - (e.pageX - startX);
 });
 
