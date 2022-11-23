@@ -315,3 +315,20 @@ svg {
     transform: translateY(0px);
   }
 }
+
+/* start of styles for about page */
+.about-portrait {
+  width: 92.23%;
+  margin-top: 7px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.about-portrait__img {
+  width: 100%;
+  height: auto;
+}
+
+.main-text__secondpara {
+  margin-top: 30px;
+}

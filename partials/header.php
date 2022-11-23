@@ -12,10 +12,10 @@
     <nav class="header">
       <h1 class="logo">gilles babou</h1>
       <ul class="nav-links">
-        <li><a href="home.html">Home</a></li>
-        <li><a href="Prints.html">Prints</a></li>
-        <li><a href="About.html">About</a></li>
-        <li><a href="Contact.html">Contact</a></li>
+        <li><a href="index.php">Home</a></li>
+        <li><a href="Prints.php">Prints</a></li>
+        <li><a href="About.php">About</a></li>
+        <li><a href="Contact.php">Contact</a></li>
       </ul>
       <div class="burger">
         <div class="line1"></div>
