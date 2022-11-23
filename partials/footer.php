@@ -11,7 +11,7 @@
     
   </div>
   <div class="legals">
-    <span>&copy;</span> 2022 Gilles Babou&nbsp;&nbsp;|&nbsp;&nbsp;<a href="">Terms & Conditions</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="">Privacy Policy</a>
+    <span>&copy;</span> 2022 Gilles Babou&nbsp;&nbsp;|&nbsp;&nbsp;<a href="terms.php">Terms & Conditions</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="privacy.php">Privacy Policy</a>
   </div>
 </div>
 </div>
