@@ -1,7 +1,7 @@
 * {
-  margin: 0px;
   padding: 0px;
   box-sizing: border-box;
+  margin: 0px;
 }
 
 html,
@@ -331,4 +331,66 @@ svg {
 
 .main-text__secondpara {
   margin-top: 30px;
+}
+
+/* start of styles for contact page */
+.contact-form {
+  margin-top: 48px;
+  padding-left: 8px;
+  padding-right: 8px;
+  /* padding-left: 0px; */
+}
+
+.contact-form__input {
+  width: 100%;
+  padding-bottom: 19px;
+  border-bottom: 1px solid black;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  margin-bottom: 40px;
+  padding-top: 0px;
+  font-family: soleil, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 19px;
+}
+
+.contact-form__input::placeholder {
+  font-family: soleil, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 19px;
+  color: black;
+}
+
+.contact-form__message {
+  border-bottom: 1px solid black;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  margin-bottom: 32px;
+  padding-bottom: 15px;
+  width: 100%;
+}
+
+.contact-form__message::placeholder {
+  font-family: soleil, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 19px;
+  color: black;
+}
+
+.contact-form__button {
+  background: black;
+  width: 97px;
+  height: 44px;
+  font-family: soleil, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 29px;
+  color: white;
+  line-height: 29px;
+  text-align: center;
 }

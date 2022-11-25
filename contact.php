@@ -10,8 +10,14 @@
     </div>
 <div class="contact-form">
     <form action="" class="contact-form">
-        <input type="text" placeholder="Name" class="contact-form__input">
-        <input type="text" placeholder="E-mail" class="contact-form__input">
+        <input type="text" placeholder="Name*" class="contact-form__input">
+        <input type="text" placeholder="E-mail*" class="contact-form__input">
+        <textarea name="" id="" placeholder="Your message*" class="contact-form__message"></textarea>
         <button class="contact-form__button">SEND</button>
     </form>
 </div>
+<script>
+    
+</script>
+<?php include('partials/footer.php'); ?>
+
