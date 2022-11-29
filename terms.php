@@ -103,5 +103,4 @@ The limitations and prohibitions of liability set in this Section and elsewhere 
 As long as the website and the information and services on the website are provided free of charge, we will not be liable for any loss or damage of any nature.              
          
     </div>
-    </script>
 <?php include('partials/footer.php'); ?>

@@ -1,9 +1,15 @@
 <?php
     include('partials/header.php');
 ?>
-    <div class="main">
+
+<div class="main">
+      <img
+        src="icons/angle-left-solid.svg"
+        class="slider-buttons previous"
+        style="width: 15px; height: 25.72px"
+        alt="icon"
+      />
       <div class="image-con">
-        <img src="icons/angle-left-solid.svg" class="slider-buttons previous" style="width:15px; height:25.72 px" alt="" />
         <img
           class="image-slides"
           data-title="flowers in the city"
@@ -138,14 +144,12 @@
           alt=""
         />
         <img
-          class="image-slides"  
+          class="image-slides"
           data-title="the geisha"
           data-number="20"
           src="images/the-geisha_web_1500_6x4.jpg"
           alt=""
         />
-        <img src="icons/angle-right-solid.svg" class='slider-buttons previous' style='width:15px; height:25.72px' alt="" />
-
       </div>
       <div class="caption">
         <p class="image-title"></p>
@@ -153,78 +157,87 @@
           <span class="image-num"></span>/<span class="image-total"></span>
         </div>
       </div>
+      <img
+        src="icons/angle-right-solid.svg"
+        class="slider-buttons next"
+        style="width: 15px; height: 25.72px"
+        alt=""
+      />
       <script>
         const imageContainer = document.querySelector(".image-con");
-const images = document.querySelectorAll(".image-slides");
-const caption = document.querySelector(".caption");
-console.log("indie js file");
-const captionTitle = caption.querySelector(".image-title");
-const numberOfImages = images.length;
-const imageNum = document.querySelector(".image-num");
-const imageTotal = document.querySelector(".image-total");
-imageTotal.innerHTML = numberOfImages;
+        const images = document.querySelectorAll(".image-slides");
+        const caption = document.querySelector(".caption");
+        const captionTitle = caption.querySelector(".image-title");
+        const numberOfImages = images.length;
+        const imageNum = document.querySelector(".image-num");
+        const imageTotal = document.querySelector(".image-total");
+        imageTotal.innerHTML = numberOfImages;
 
-const firstImage = images[0];
-captionTitle.innerHTML = firstImage.dataset.title;
-imageNum.innerHTML = firstImage.dataset.number;
-imageContainer.addEventListener("touchend", (e) => {
-  setTimeout(() => {
-    images.forEach((image) => {
-      if (
-        image.getBoundingClientRect().left >= 14 &&
-        image.getBoundingClientRect().left <= 16
-      ) {
-        captionTitle.innerHTML = image.dataset.title;
-        imageNum.innerHTML = image.dataset.number;
-      }
-    });
-  }, 800);
-});
+        const firstImage = images[0];
+        console.log(firstImage.getBoundingClientRect().left);
 
-const widthOfContainer = imageContainer.getBoundingClientRect().width;
-let changeInMouse = 0;
+        captionTitle.innerHTML = firstImage.dataset.title;
+        imageNum.innerHTML = firstImage.dataset.number;
+        imageContainer.addEventListener("touchend", (e) => {
+          console.log("scroll: ", imageContainer.scrollLeft);
 
-let isDown = false;
-let startX;
-let scrollLeft;
+          setTimeout(() => {
+            images.forEach((image) => {
+              if (
+                image.getBoundingClientRect().left >= 14 &&
+                image.getBoundingClientRect().left <= 16
+              ) {
+                captionTitle.innerHTML = image.dataset.title;
+                imageNum.innerHTML = image.dataset.number;
+              } else if (
+                image.getBoundingClientRect().left >= 204 &&
+                image.getBoundingClientRect().left <= 208
+              ) {
+                captionTitle.innerHTML = image.dataset.title;
+                imageNum.innerHTML = image.dataset.number;
+              }
+            });
+          }, 800);
+        });
 
-imageContainer.addEventListener("mousedown", (e) => {
-  isDown = true;
-  // get the x position of the mouse when the mouse is clicked
-  startX = e.pageX;
-  // get the current scroll position of the image container
-  scrollLeft = imageContainer.scrollLeft;
-});
+        const widthOfContainer = imageContainer.getBoundingClientRect().width;
+        let changeInMouse = 0;
 
-imageContainer.addEventListener("mouseleave", () => {
-  isDown = false;
-  // imageContainer.classList.remove('active');
-});
+        let isDown = false;
+        let startX;
+        let scrollLeft;
 
-imageContainer.addEventListener("mouseup", () => {
-  isDown = false;
-  // if mouse was dragged to the right then images move back else images move forward
-  if (changeInMouse > 0) {
-    imageContainer.scrollLeft = scrollLeft - widthOfContainer;
-  } else {
-    imageContainer.scrollLeft = scrollLeft + widthOfContainer;
-  }
-});
+        imageContainer.addEventListener("mousedown", (e) => {
+          isDown = true;
+          // get the x position of the mouse when the mouse is clicked
+          startX = e.pageX;
+          // get the current scroll position of the image container
+          scrollLeft = imageContainer.scrollLeft;
+        });
 
-imageContainer.addEventListener("mousemove", (e) => {
-  if (!isDown) return; // stop the fn from running
-  e.preventDefault();
-  // get the change in mouse position
-  changeInMouse = e.movementX;
-  // scroll the image container by the current scroll position minus the change in mouse position
-  console.log(e.pageX);
-  imageContainer.scrollLeft = scrollLeft - (e.pageX - startX);
-});
+        imageContainer.addEventListener("mouseleave", () => {
+          isDown = false;
+          // imageContainer.classList.remove('active');
+        });
 
+        imageContainer.addEventListener("mouseup", () => {
+          isDown = false;
+          // if mouse was dragged to the right then images move back else images move forward
+          if (changeInMouse > 0) {
+            imageContainer.scrollLeft = scrollLeft - widthOfContainer;
+          } else {
+            imageContainer.scrollLeft = scrollLeft + widthOfContainer;
+          }
+        });
+
+        imageContainer.addEventListener("mousemove", (e) => {
+          if (!isDown) return; // stop the fn from running
+          e.preventDefault();
+          // get the change in mouse position
+          changeInMouse = e.movementX;
+          // scroll the image container by the current scroll position minus the change in mouse position
+          console.log(e.pageX);
+          imageContainer.scrollLeft = scrollLeft - (e.pageX - startX);
+        });
       </script>
-      <?php
-        include('partials/footer.php');
-      ?>
-    
-
-    
+<?php include('partials/footer.php'); ?>

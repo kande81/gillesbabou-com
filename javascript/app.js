@@ -5,13 +5,13 @@
 //// end of code for slider capabilites in desktop view
 
 // start of code for displaying the menu when the hamburger icon is clicked
-
+const main = document.querySelector(".main");
 const burger = document.querySelector(".burger");
 const nav = document.querySelector(".nav-links");
 const navLinks = document.querySelectorAll(".nav-links li");
 
 burger.addEventListener("click", () => {
-  document.body.classList.toggle("hidden");
+  main.classList.toggle("bhidden");
   nav.classList.toggle("nav-active");
   // animate the links
   navLinks.forEach((link, index) => {
