@@ -27,12 +27,12 @@ class Config
      *
      * @var string
      */
-    const SMTP_USER = 'yannickbabou@gmail.com';
+    const SMTP_USER = '';
 
     /**
      * SMTP password
      *
      * @var string
      */
-    const SMTP_PASSWORD = 'xwxivnixelwqwofi';
+    const SMTP_PASSWORD = '';
 }

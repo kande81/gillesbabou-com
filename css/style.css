@@ -6,7 +6,7 @@
 
 html,
 body {
-  height: fit-content;
+  height: 100%;
   width: 100vw;
 }
 
@@ -117,8 +117,19 @@ body {
   cursor: grab;
 }
 
-.slider-buttons {
-  display: none;
+@media (orientation: landscape) {
+  .image-con {
+    width: 47.01%;
+    margin-top: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    position: relative;
+    scroll-behavior: smooth;
+    cursor: grab;
+  }
 }
 
 .image-con::-webkit-scrollbar {
@@ -130,6 +141,9 @@ body {
   width: 100%;
   height: auto;
   scroll-snap-align: start;
+}
+.slider-buttons {
+  display: none;
 }
 
 .caption {
