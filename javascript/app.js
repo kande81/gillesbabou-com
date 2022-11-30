@@ -11,7 +11,7 @@ const nav = document.querySelector(".nav-links");
 const navLinks = document.querySelectorAll(".nav-links li");
 
 burger.addEventListener("click", () => {
-  main.classList.toggle("bhidden");
+  // main.classList.toggle("bhidden");
   nav.classList.toggle("nav-active");
   // animate the links
   navLinks.forEach((link, index) => {

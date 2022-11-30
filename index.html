@@ -1,11 +1,32 @@
-<?php
-    include('partials/header.php');
-?>
-
-<div class="main">
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://use.typekit.net/zrk0gpj.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <nav class="header">
+      <h1 class="logo">gilles babou</h1>
+      <ul class="nav-links">
+        <li><a href="index.php">Home</a></li>
+        <li><a href="Prints.php">Prints</a></li>
+        <li><a href="About.php">About</a></li>
+        <li><a href="Contact.php">Contact</a></li>
+      </ul>
+      <div class="burger">
+        <div class="line1"></div>
+        <div class="line2"></div>
+      </div>
+    </nav>
+    <div class="main">
       <img
         src="icons/angle-left-solid.svg"
-        class="slider-buttons previous"
+        class="slider-buttons"
+        id="left"
         style="width: 15px; height: 25.72px"
         alt="icon"
       />
@@ -159,46 +180,66 @@
       </div>
       <img
         src="icons/angle-right-solid.svg"
-        class="slider-buttons next"
+        class="slider-buttons"
+        id="right"
         style="width: 15px; height: 25.72px"
         alt=""
       />
       <script>
         const imageContainer = document.querySelector(".image-con");
+        console.log("width", imageContainer.clientWidth);
+        const containerWidth = imageContainer.clientWidth;
         const images = document.querySelectorAll(".image-slides");
+        console.log(images[0].dataset.title);
         const caption = document.querySelector(".caption");
         const captionTitle = caption.querySelector(".image-title");
         const numberOfImages = images.length;
         const imageNum = document.querySelector(".image-num");
         const imageTotal = document.querySelector(".image-total");
         imageTotal.innerHTML = numberOfImages;
+        let index = 0;
+        let preScroll = 0;
+        let scroll = 0;
+        let step = 0;
 
-        const firstImage = images[0];
-        console.log(firstImage.getBoundingClientRect().left);
+        captionTitle.innerHTML = images[0].dataset.title;
+        imageNum.innerHTML = images[0].dataset.number;
 
-        captionTitle.innerHTML = firstImage.dataset.title;
-        imageNum.innerHTML = firstImage.dataset.number;
+        //code for sliding images with touch
         imageContainer.addEventListener("touchend", (e) => {
-          console.log("scroll: ", imageContainer.scrollLeft);
-
           setTimeout(() => {
-            images.forEach((image) => {
-              if (
-                image.getBoundingClientRect().left >= 14 &&
-                image.getBoundingClientRect().left <= 16
-              ) {
-                captionTitle.innerHTML = image.dataset.title;
-                imageNum.innerHTML = image.dataset.number;
-              } else if (
-                image.getBoundingClientRect().left >= 204 &&
-                image.getBoundingClientRect().left <= 208
-              ) {
-                captionTitle.innerHTML = image.dataset.title;
-                imageNum.innerHTML = image.dataset.number;
-              }
-            });
+            scroll = imageContainer.scrollLeft;
+            if (scroll == preScroll) return;
+            step = Math.round((scroll - preScroll) / containerWidth);
+            index = index + step;
+            captionTitle.innerHTML = images[index].dataset.title;
+            imageNum.innerHTML = images[index].dataset.number;
+            preScroll = scroll;
           }, 800);
         });
+
+        //code for sliding images with buttons
+        const buttons = document.querySelectorAll(".slider-buttons");
+
+        buttons.forEach((button) => {
+          button.addEventListener("click", (e) => {
+            console.log("index", index);
+            if (e.target.id == "left") {
+              if (index == 0) return;
+              index--;
+              imageContainer.scrollLeft -= containerWidth;
+              captionTitle.innerHTML = images[index].dataset.title;
+              imageNum.innerHTML = images[index].dataset.number;
+            } else if (e.target.id == "right") {
+              if (index == numberOfImages - 1) return;
+              index++;
+              imageContainer.scrollLeft += containerWidth;
+              captionTitle.innerHTML = images[index].dataset.title;
+              imageNum.innerHTML = images[index].dataset.number;
+            }
+          });
+        });
+        // end of code for sliding images with buttons
 
         const widthOfContainer = imageContainer.getBoundingClientRect().width;
         let changeInMouse = 0;
@@ -236,8 +277,34 @@
           // get the change in mouse position
           changeInMouse = e.movementX;
           // scroll the image container by the current scroll position minus the change in mouse position
-          console.log(e.pageX);
+          // console.log(e.pageX);
           imageContainer.scrollLeft = scrollLeft - (e.pageX - startX);
+          console.log("scrollLeft", imageContainer.scrollLeft);
         });
       </script>
-<?php include('partials/footer.php'); ?>
+      <div class="footer">
+        <div class="menu">
+          <a href="index.php">Home</a>
+          <a href="Prints.php">Prints</a>
+          <a href="About.php">About</a>
+          <a href="Contact.php">Contact</a>
+        </div>
+        <div class="social-icons">
+          <a href=""
+            ><img src="icons/facebook.svg" class="facebook-icon" alt=""
+          /></a>
+          <a href="" class="instagram"
+            ><img src="icons/instagram.svg" class="insta-icon" alt=""
+          /></a>
+        </div>
+        <div class="legals">
+          <span>&copy;</span> 2022 Gilles Babou&nbsp;&nbsp;|&nbsp;&nbsp;<a
+            href="terms.php"
+            >Terms & Conditions</a
+          >&nbsp;&nbsp;|&nbsp;&nbsp;<a href="privacy.php">Privacy Policy</a>
+        </div>
+      </div>
+    </div>
+    <script src="javascript/app.js"></script>
+  </body>
+</html>

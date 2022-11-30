@@ -6,10 +6,13 @@
 
 html,
 body {
-  height: 100%;
+  height: fit-content;
   width: 100vw;
 }
 
+/* .body-menu {
+  height: ;
+} */
 body {
   display: grid;
   grid:
@@ -57,6 +60,17 @@ body {
   position: relative;
   left: 9px;
 }
+@media (orientation: landscape) and (max-width: 933px) {
+  .logo {
+    position: relative;
+    bottom: 10px;
+  }
+
+  .burger {
+    position: relative;
+    bottom: 10px;
+  }
+}
 
 .nav-links {
   flex-direction: column;
@@ -74,13 +88,17 @@ body {
   padding-top: 20px;
   align-items: center;
   transition: all 0.6s ease-out;
+  overflow-y: scroll;
+
+  overscroll-behavior: contain;
 }
 
 @media (orientation: landscape) and (max-width: 933px) {
   .nav-links {
     height: 86vh;
-    top: 15vh;
+    top: 14vh;
     padding-bottom: 62px;
+    /* overflow-y: scroll; */
   }
 }
 
@@ -126,7 +144,6 @@ body {
   margin-right: auto;
   display: flex;
   overflow-x: scroll;
-  scroll-snap-type: x mandatory;
   position: relative;
   scroll-behavior: smooth;
   cursor: grab;
@@ -134,13 +151,13 @@ body {
 
 @media (orientation: landscape) and (max-width: 933px) {
   .image-con {
-    width: 47.01%;
+    width: 347px;
     margin-top: 25px;
     margin-left: auto;
     margin-right: auto;
     display: flex;
     overflow-x: scroll;
-    scroll-snap-type: x mandatory;
+    /* scroll-snap-type: x mandatory; */
     position: relative;
     scroll-behavior: smooth;
     cursor: grab;
@@ -170,11 +187,11 @@ body {
     /* color: black; */
     /* background-color: black; */
   }
-  .previous {
+  #left {
     left: 143px;
     top: 178px;
   }
-  .next {
+  #right {
     right: 143px;
     top: 178px;
   }
@@ -194,10 +211,10 @@ body {
 
 @media (orientation: landscape) and (max-width: 933px) {
   .caption {
-    width: 47.01%;
+    width: 347px;
     margin-left: auto;
     margin-right: auto;
-    margin-top: -13px;
+    /* margin-top: -13px; */
     display: grid;
     grid: auto / 1fr 33px;
     font-family: soleil, sans-serif;
