@@ -175,7 +175,9 @@
       <div class="caption">
         <p class="image-title"></p>
         <div class="image-counter">
-          <span class="image-num"></span>/<span class="image-total"></span>
+          <span class="image-num"></span>
+          <span class="bar" style="display: inline-block">/</span>
+          <span class="image-total" style="display: inline-block"></span>
         </div>
       </div>
       <img
@@ -186,6 +188,7 @@
         alt=""
       />
       <script>
+        const bar = document.querySelector(".bar");
         const imageContainer = document.querySelector(".image-con");
         console.log("width", imageContainer.clientWidth);
         const containerWidth = imageContainer.clientWidth;
@@ -204,18 +207,35 @@
 
         captionTitle.innerHTML = images[0].dataset.title;
         imageNum.innerHTML = images[0].dataset.number;
+        // imageNum.style.animation = "num-anim 2s ease-in-out";
 
         //code for sliding images with touch
         imageContainer.addEventListener("touchend", (e) => {
+          if (captionTitle.style.animation) {
+            captionTitle.style.animation = "";
+          }
+          if (imageNum.style.animation) {
+            imageNum.style.animation = "";
+          }
+          if (bar.style.animation) {
+            bar.style.animation = "";
+          }
+
           setTimeout(() => {
+            console.log("indes after touch", index);
             scroll = imageContainer.scrollLeft;
+
             if (scroll == preScroll) return;
             step = Math.round((scroll - preScroll) / containerWidth);
             index = index + step;
+            bar.style.animation = "bar-spin 0.5s ease-in-out";
+            captionTitle.style.animation = "title-fade 1.5s ease-in-out";
+            imageNum.style.animation = "title-fade 1.5s ease-in-out";
             captionTitle.innerHTML = images[index].dataset.title;
             imageNum.innerHTML = images[index].dataset.number;
             preScroll = scroll;
-          }, 800);
+            console.log("index after scroll", index);
+          }, 1100);
         });
 
         //code for sliding images with buttons
@@ -224,6 +244,7 @@
         buttons.forEach((button) => {
           button.addEventListener("click", (e) => {
             console.log("index", index);
+            console.log("scrll-left", imageContainer.scrollLeft);
             if (e.target.id == "left") {
               if (index == 0) return;
               index--;
