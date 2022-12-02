@@ -155,7 +155,7 @@ body {
 
 @media (orientation: landscape) and (max-width: 933px) {
   .image-con {
-    width: 347px;
+    width: 47.01%;
     margin-top: 25px;
     margin-left: auto;
     margin-right: auto;
@@ -200,6 +200,10 @@ body {
     top: 178px;
   }
 }
+
+.btn-svg {
+  pointer-events: none;
+}
 .caption {
   width: 92.23%;
   margin-left: auto;
@@ -233,12 +237,12 @@ body {
 
 @media (orientation: landscape) and (max-width: 933px) {
   .caption {
-    width: 347px;
+    width: 47.01%;
     margin-left: auto;
     margin-right: auto;
     /* margin-top: -13px; */
-    display: grid;
-    grid: auto / 1fr 33px;
+    display: flex;
+    justify-content: space-between;
     font-family: soleil, sans-serif;
     font-weight: 400;
     font-style: normal;
@@ -254,16 +258,6 @@ body {
   animation: 2s ease-out num-anim;
 }
 
-@keyframes num-anim {
-  from {
-    opacity: 1;
-    rotate: 0deg;
-  }
-  to {
-    opacity: 1;
-    rotate: 360deg;
-  }
-}
 .footer {
   font-family: soleil, sans-serif;
   font-style: normal;

@@ -23,13 +23,13 @@
       </div>
     </nav>
     <div class="main">
-      <img
-        src="icons/angle-left-solid.svg"
+      <div
         class="slider-buttons"
-        id="left"
         style="width: 15px; height: 25.72px"
-        alt="icon"
-      />
+        id="left"
+      >
+        <img src="icons/angle-left-solid.svg" class="btn-svg" alt="icon" />
+      </div>
       <div class="image-con">
         <img
           class="image-slides"
@@ -180,27 +180,28 @@
           <span class="image-total" style="display: inline-block"></span>
         </div>
       </div>
-      <img
-        src="icons/angle-right-solid.svg"
+      <div
         class="slider-buttons"
-        id="right"
         style="width: 15px; height: 25.72px"
-        alt=""
-      />
+        id="right"
+      >
+        <img src="icons/angle-right-solid.svg" alt="" class="btn-svg" />
+      </div>
       <script>
-        const bar = document.querySelector(".bar");
+        const leftbtn = document.querySelector("#left");
+        let bar = document.querySelector(".bar");
         const imageContainer = document.querySelector(".image-con");
         console.log("width", imageContainer.clientWidth);
         const containerWidth = imageContainer.clientWidth;
         const images = document.querySelectorAll(".image-slides");
         console.log(images[0].dataset.title);
         const caption = document.querySelector(".caption");
-        const captionTitle = caption.querySelector(".image-title");
+        let captionTitle = caption.querySelector(".image-title");
         const numberOfImages = images.length;
-        const imageNum = document.querySelector(".image-num");
+        let imageNum = document.querySelector(".image-num");
         const imageTotal = document.querySelector(".image-total");
         imageTotal.innerHTML = numberOfImages;
-        let index = 0;
+        let index = 1;
         let preScroll = 0;
         let scroll = 0;
         let step = 0;
@@ -209,30 +210,33 @@
         imageNum.innerHTML = images[0].dataset.number;
         // imageNum.style.animation = "num-anim 2s ease-in-out";
 
+        function captionAnimation() {
+          bar.style.animation = "bar-spin 0.5s ease-in-out";
+          captionTitle.style.animation = "title-fade 1.5s ease-in-out";
+          imageNum.style.animation = "title-fade 1.5s ease-in-out";
+        }
+
+        function removeAnimation() {
+          captionTitle.style.animation = "";
+
+          imageNum.style.animation = "";
+
+          bar.style.animation = "";
+        }
+
         //code for sliding images with touch
         imageContainer.addEventListener("touchend", (e) => {
-          if (captionTitle.style.animation) {
-            captionTitle.style.animation = "";
-          }
-          if (imageNum.style.animation) {
-            imageNum.style.animation = "";
-          }
-          if (bar.style.animation) {
-            bar.style.animation = "";
-          }
-
+          removeAnimation();
           setTimeout(() => {
-            console.log("indes after touch", index);
+            console.log("index after touch", index);
             scroll = imageContainer.scrollLeft;
 
             if (scroll == preScroll) return;
             step = Math.round((scroll - preScroll) / containerWidth);
             index = index + step;
-            bar.style.animation = "bar-spin 0.5s ease-in-out";
-            captionTitle.style.animation = "title-fade 1.5s ease-in-out";
-            imageNum.style.animation = "title-fade 1.5s ease-in-out";
-            captionTitle.innerHTML = images[index].dataset.title;
-            imageNum.innerHTML = images[index].dataset.number;
+            captionAnimation();
+            captionTitle.innerHTML = images[index - 1].dataset.title;
+            imageNum.innerHTML = images[index - 1].dataset.number;
             preScroll = scroll;
             console.log("index after scroll", index);
           }, 1100);
@@ -243,20 +247,47 @@
 
         buttons.forEach((button) => {
           button.addEventListener("click", (e) => {
-            console.log("index", index);
-            console.log("scrll-left", imageContainer.scrollLeft);
+            captionTitle.style.animation = "";
+
+            imageNum.style.animation = "";
+
+            bar.style.animation = "";
+
             if (e.target.id == "left") {
-              if (index == 0) return;
-              index--;
-              imageContainer.scrollLeft -= containerWidth;
-              captionTitle.innerHTML = images[index].dataset.title;
-              imageNum.innerHTML = images[index].dataset.number;
+              if (index !== 1) {
+                index--;
+                if (captionTitle.style.animation) {
+                  captionTitle.style.animation = "";
+                }
+                if (imageNum.style.animation) {
+                  imageNum.style.animation = "";
+                }
+                if (bar.style.animation) {
+                  bar.style.animation = "";
+                }
+
+                bar.style.animation = "bar-spin 0.5s ease-in-out";
+                captionTitle.style.animation = "title-fade 1.5s ease-in-out";
+                imageNum.style.animation = "title-fade 1.5s ease-in-out";
+
+                imageContainer.scrollLeft -= containerWidth;
+                captionTitle.innerHTML = images[index - 1].dataset.title;
+                imageNum.innerHTML = images[index - 1].dataset.number;
+                captionAnimation();
+              }
             } else if (e.target.id == "right") {
-              if (index == numberOfImages - 1) return;
-              index++;
-              imageContainer.scrollLeft += containerWidth;
-              captionTitle.innerHTML = images[index].dataset.title;
-              imageNum.innerHTML = images[index].dataset.number;
+              if (index !== numberOfImages) {
+                index++;
+                removeAnimation();
+
+                bar.style.animation = "bar-spin 0.5s ease-in-out";
+                captionTitle.style.animation = "title-fade 1.5s ease-in-out";
+                imageNum.style.animation = "title-fade 1.5s ease-in-out";
+
+                imageContainer.scrollLeft += containerWidth;
+                captionTitle.innerHTML = images[index - 1].dataset.title;
+                imageNum.innerHTML = images[index - 1].dataset.number;
+              }
             }
           });
         });
