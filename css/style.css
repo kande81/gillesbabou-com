@@ -218,6 +218,10 @@ body {
   cursor: pointer;
 }
 
+.caption-fade {
+  animation: title-fade 1.5s ease-in-out;
+}
+
 @keyframes title-fade {
   0% {
     opacity: 0;

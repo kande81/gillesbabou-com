@@ -23,13 +23,6 @@
       </div>
     </nav>
     <div class="main">
-      <div
-        class="slider-buttons"
-        style="width: 15px; height: 25.72px"
-        id="left"
-      >
-        <img src="icons/angle-left-solid.svg" class="btn-svg" alt="icon" />
-      </div>
       <div class="image-con">
         <img
           class="image-slides"
@@ -180,15 +173,9 @@
           <span class="image-total" style="display: inline-block"></span>
         </div>
       </div>
-      <div
-        class="slider-buttons"
-        style="width: 15px; height: 25.72px"
-        id="right"
-      >
-        <img src="icons/angle-right-solid.svg" alt="" class="btn-svg" />
-      </div>
       <script>
         const leftbtn = document.querySelector("#left");
+        const rightbtn = document.querySelector("#right");
         let bar = document.querySelector(".bar");
         const imageContainer = document.querySelector(".image-con");
         console.log("width", imageContainer.clientWidth);
@@ -227,6 +214,8 @@
         //code for sliding images with touch
         imageContainer.addEventListener("touchend", (e) => {
           removeAnimation();
+          console.log("scroll", scroll, "preScroll", preScroll);
+
           setTimeout(() => {
             console.log("index after touch", index);
             scroll = imageContainer.scrollLeft;
@@ -239,58 +228,10 @@
             imageNum.innerHTML = images[index - 1].dataset.number;
             preScroll = scroll;
             console.log("index after scroll", index);
-          }, 1100);
+          }, 400);
         });
 
         //code for sliding images with buttons
-        const buttons = document.querySelectorAll(".slider-buttons");
-
-        buttons.forEach((button) => {
-          button.addEventListener("click", (e) => {
-            captionTitle.style.animation = "";
-
-            imageNum.style.animation = "";
-
-            bar.style.animation = "";
-
-            if (e.target.id == "left") {
-              if (index !== 1) {
-                index--;
-                if (captionTitle.style.animation) {
-                  captionTitle.style.animation = "";
-                }
-                if (imageNum.style.animation) {
-                  imageNum.style.animation = "";
-                }
-                if (bar.style.animation) {
-                  bar.style.animation = "";
-                }
-
-                bar.style.animation = "bar-spin 0.5s ease-in-out";
-                captionTitle.style.animation = "title-fade 1.5s ease-in-out";
-                imageNum.style.animation = "title-fade 1.5s ease-in-out";
-
-                imageContainer.scrollLeft -= containerWidth;
-                captionTitle.innerHTML = images[index - 1].dataset.title;
-                imageNum.innerHTML = images[index - 1].dataset.number;
-                captionAnimation();
-              }
-            } else if (e.target.id == "right") {
-              if (index !== numberOfImages) {
-                index++;
-                removeAnimation();
-
-                bar.style.animation = "bar-spin 0.5s ease-in-out";
-                captionTitle.style.animation = "title-fade 1.5s ease-in-out";
-                imageNum.style.animation = "title-fade 1.5s ease-in-out";
-
-                imageContainer.scrollLeft += containerWidth;
-                captionTitle.innerHTML = images[index - 1].dataset.title;
-                imageNum.innerHTML = images[index - 1].dataset.number;
-              }
-            }
-          });
-        });
         // end of code for sliding images with buttons
 
         const widthOfContainer = imageContainer.getBoundingClientRect().width;
