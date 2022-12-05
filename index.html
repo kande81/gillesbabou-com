@@ -173,131 +173,132 @@
           <span class="image-total" style="display: inline-block"></span>
         </div>
       </div>
-      <script>
-        const leftbtn = document.querySelector("#left");
-        const rightbtn = document.querySelector("#right");
-        let bar = document.querySelector(".bar");
-        const imageContainer = document.querySelector(".image-con");
-        console.log("width", imageContainer.clientWidth);
-        const containerWidth = imageContainer.clientWidth;
-        const images = document.querySelectorAll(".image-slides");
-        console.log(images[0].dataset.title);
-        const caption = document.querySelector(".caption");
-        let captionTitle = caption.querySelector(".image-title");
-        const numberOfImages = images.length;
-        let imageNum = document.querySelector(".image-num");
-        const imageTotal = document.querySelector(".image-total");
-        imageTotal.innerHTML = numberOfImages;
-        let index = 1;
-        let preScroll = 0;
-        let scroll = 0;
-        let step = 0;
+    </div>
+    <script>
+      const leftbtn = document.querySelector("#left");
+      const rightbtn = document.querySelector("#right");
+      let bar = document.querySelector(".bar");
+      const imageContainer = document.querySelector(".image-con");
+      console.log("width", imageContainer.clientWidth);
+      const containerWidth = imageContainer.clientWidth;
+      const images = document.querySelectorAll(".image-slides");
+      console.log(images[0].dataset.title);
+      const caption = document.querySelector(".caption");
+      let captionTitle = caption.querySelector(".image-title");
+      const numberOfImages = images.length;
+      let imageNum = document.querySelector(".image-num");
+      const imageTotal = document.querySelector(".image-total");
+      imageTotal.innerHTML = numberOfImages;
+      let index = 1;
+      let preScroll = 0;
+      let scroll = 0;
+      let step = 0;
 
-        captionTitle.innerHTML = images[0].dataset.title;
-        imageNum.innerHTML = images[0].dataset.number;
-        // imageNum.style.animation = "num-anim 2s ease-in-out";
+      captionTitle.innerHTML = images[0].dataset.title;
+      imageNum.innerHTML = images[0].dataset.number;
+      // imageNum.style.animation = "num-anim 2s ease-in-out";
 
-        function captionAnimation() {
-          bar.style.animation = "bar-spin 0.5s ease-in-out";
-          captionTitle.style.animation = "title-fade 1.5s ease-in-out";
-          imageNum.style.animation = "title-fade 1.5s ease-in-out";
+      function captionAnimation() {
+        bar.style.animation = "bar-spin 0.5s ease-in-out";
+        captionTitle.style.animation = "title-fade 1.5s ease-in-out";
+        imageNum.style.animation = "title-fade 1.5s ease-in-out";
+      }
+
+      function removeAnimation() {
+        captionTitle.style.animation = "";
+
+        imageNum.style.animation = "";
+
+        bar.style.animation = "";
+      }
+
+      //code for sliding images with touch
+      imageContainer.addEventListener("touchend", (e) => {
+        removeAnimation();
+        console.log("scroll", scroll, "preScroll", preScroll);
+
+        setTimeout(() => {
+          console.log("index after touch", index);
+          scroll = imageContainer.scrollLeft;
+
+          if (scroll == preScroll) return;
+          step = Math.round((scroll - preScroll) / containerWidth);
+          index = index + step;
+          captionAnimation();
+          captionTitle.innerHTML = images[index - 1].dataset.title;
+          imageNum.innerHTML = images[index - 1].dataset.number;
+          preScroll = scroll;
+          console.log("index after scroll", index);
+        }, 800);
+      });
+
+      //code for sliding images with buttons
+      // end of code for sliding images with buttons
+
+      const widthOfContainer = imageContainer.getBoundingClientRect().width;
+      let changeInMouse = 0;
+
+      let isDown = false;
+      let startX;
+      let scrollLeft;
+
+      imageContainer.addEventListener("mousedown", (e) => {
+        isDown = true;
+        // get the x position of the mouse when the mouse is clicked
+        startX = e.pageX;
+        // get the current scroll position of the image container
+        scrollLeft = imageContainer.scrollLeft;
+      });
+
+      imageContainer.addEventListener("mouseleave", () => {
+        isDown = false;
+        // imageContainer.classList.remove('active');
+      });
+
+      imageContainer.addEventListener("mouseup", () => {
+        isDown = false;
+        // if mouse was dragged to the right then images move back else images move forward
+        if (changeInMouse > 0) {
+          imageContainer.scrollLeft = scrollLeft - widthOfContainer;
+        } else {
+          imageContainer.scrollLeft = scrollLeft + widthOfContainer;
         }
+      });
 
-        function removeAnimation() {
-          captionTitle.style.animation = "";
-
-          imageNum.style.animation = "";
-
-          bar.style.animation = "";
-        }
-
-        //code for sliding images with touch
-        imageContainer.addEventListener("touchend", (e) => {
-          removeAnimation();
-          console.log("scroll", scroll, "preScroll", preScroll);
-
-          setTimeout(() => {
-            console.log("index after touch", index);
-            scroll = imageContainer.scrollLeft;
-
-            if (scroll == preScroll) return;
-            step = Math.round((scroll - preScroll) / containerWidth);
-            index = index + step;
-            captionAnimation();
-            captionTitle.innerHTML = images[index - 1].dataset.title;
-            imageNum.innerHTML = images[index - 1].dataset.number;
-            preScroll = scroll;
-            console.log("index after scroll", index);
-          }, 800);
-        });
-
-        //code for sliding images with buttons
-        // end of code for sliding images with buttons
-
-        const widthOfContainer = imageContainer.getBoundingClientRect().width;
-        let changeInMouse = 0;
-
-        let isDown = false;
-        let startX;
-        let scrollLeft;
-
-        imageContainer.addEventListener("mousedown", (e) => {
-          isDown = true;
-          // get the x position of the mouse when the mouse is clicked
-          startX = e.pageX;
-          // get the current scroll position of the image container
-          scrollLeft = imageContainer.scrollLeft;
-        });
-
-        imageContainer.addEventListener("mouseleave", () => {
-          isDown = false;
-          // imageContainer.classList.remove('active');
-        });
-
-        imageContainer.addEventListener("mouseup", () => {
-          isDown = false;
-          // if mouse was dragged to the right then images move back else images move forward
-          if (changeInMouse > 0) {
-            imageContainer.scrollLeft = scrollLeft - widthOfContainer;
-          } else {
-            imageContainer.scrollLeft = scrollLeft + widthOfContainer;
-          }
-        });
-
-        imageContainer.addEventListener("mousemove", (e) => {
-          if (!isDown) return; // stop the fn from running
-          e.preventDefault();
-          // get the change in mouse position
-          changeInMouse = e.movementX;
-          // scroll the image container by the current scroll position minus the change in mouse position
-          // console.log(e.pageX);
-          imageContainer.scrollLeft = scrollLeft - (e.pageX - startX);
-          console.log("scrollLeft", imageContainer.scrollLeft);
-        });
-      </script>
-      <div class="footer">
-        <div class="menu">
-          <a href="index.php">Home</a>
-          <a href="Prints.html">Prints</a>
-          <a href="About.php">About</a>
-          <a href="Contact.php">Contact</a>
-        </div>
-        <div class="social-icons">
-          <a href=""
-            ><img src="icons/facebook.svg" class="facebook-icon" alt=""
-          /></a>
-          <a href="" class="instagram"
-            ><img src="icons/instagram.svg" class="insta-icon" alt=""
-          /></a>
-        </div>
-        <div class="legals">
-          <span>&copy;</span> 2022 Gilles Babou&nbsp;&nbsp;|&nbsp;&nbsp;<a
-            href="terms.php"
-            >Terms & Conditions</a
-          >&nbsp;&nbsp;|&nbsp;&nbsp;<a href="privacy.php">Privacy Policy</a>
-        </div>
+      imageContainer.addEventListener("mousemove", (e) => {
+        if (!isDown) return; // stop the fn from running
+        e.preventDefault();
+        // get the change in mouse position
+        changeInMouse = e.movementX;
+        // scroll the image container by the current scroll position minus the change in mouse position
+        // console.log(e.pageX);
+        imageContainer.scrollLeft = scrollLeft - (e.pageX - startX);
+        console.log("scrollLeft", imageContainer.scrollLeft);
+      });
+    </script>
+    <div class="footer">
+      <div class="menu">
+        <a href="index.php">Home</a>
+        <a href="Prints.html">Prints</a>
+        <a href="About.php">About</a>
+        <a href="Contact.php">Contact</a>
+      </div>
+      <div class="social-icons">
+        <a href=""
+          ><img src="icons/facebook.svg" class="facebook-icon" alt=""
+        /></a>
+        <a href="" class="instagram"
+          ><img src="icons/instagram.svg" class="insta-icon" alt=""
+        /></a>
+      </div>
+      <div class="legals">
+        <span>&copy;</span> 2022 Gilles Babou&nbsp;&nbsp;|&nbsp;&nbsp;<a
+          href="terms.php"
+          >Terms & Conditions</a
+        >&nbsp;&nbsp;|&nbsp;&nbsp;<a href="privacy.php">Privacy Policy</a>
       </div>
     </div>
+
     <script src="javascript/app.js"></script>
   </body>
 </html>
