@@ -485,6 +485,20 @@ svg {
   margin-right: auto;
 }
 
+@media (orientation: landscape) and (max-width: 933px) {
+  .about-portrait {
+    width: 35%;
+    margin-left: 16px;
+    margin-right: 16px;
+    margin-top: 7px;
+    float: left;
+  }
+  .main-text {
+    position: relative;
+    top: -12px;
+  }
+}
+
 .about-portrait__img {
   width: 100%;
   height: auto;
@@ -500,6 +514,36 @@ svg {
   padding-left: 16px;
   padding-right: 16px;
   /* padding-left: 0px; */
+}
+
+@media (orientation: landscape) and (max-width: 933px) {
+  .contact-form {
+    display: grid;
+    grid:
+      "name email" auto
+      "message message" auto
+      "button ." 44px
+      / 1fr 1fr;
+    grid-column-gap: 24px;
+  }
+
+  #name1 {
+    grid-area: name;
+    /* width: 100%; */
+  }
+
+  #email1 {
+    grid-area: email;
+    width: 100%;
+  }
+
+  #body1 {
+    grid-area: message;
+  }
+
+  .contact-form__button {
+    grid-area: button;
+  }
 }
 
 .contact-form__input {
