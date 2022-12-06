@@ -28,6 +28,15 @@ body {
       / 100%;
   }
 }
+
+@media (min-width: 934px) and (max-width: 1024px) {
+  body {
+    grid:
+      "header" 14vh
+      "main" 1fr
+      / 100%;
+  }
+}
 .bhidden {
   overflow: hidden;
 }
@@ -35,7 +44,6 @@ body {
   grid-area: header;
   display: grid;
   grid: 100% / 1fr 30% 26.46px;
-  /* display: flex; */
   justify-content: space-between;
   padding-top: 26px;
   padding-right: 16px;
@@ -47,7 +55,7 @@ body {
   background-color: #fff;
 }
 
-@media (min-width: 933px) and (max-width: 1024px) {
+@media (min-width: 934px) and (max-width: 1024px) {
   .header {
     grid: 100% / 1fr 30% 40.5px;
   }
@@ -78,7 +86,7 @@ body {
   }
 }
 
-@media (min-width: 933px) and (max-width: 1024px) {
+@media (min-width: 934px) and (max-width: 1024px) {
   .logo {
     font-size: 53px;
   }
@@ -110,6 +118,14 @@ body {
     height: 86vh;
     top: 14vh;
     padding-bottom: 62px;
+    /* overflow-y: scroll; */
+  }
+}
+@media (min-width: 934px) and (max-width: 1024px) {
+  .nav-links {
+    height: 86vh;
+    top: 14vh;
+    padding-bottom: 130px;
     /* overflow-y: scroll; */
   }
 }
@@ -145,7 +161,7 @@ body {
   transition: all 0.3s ease-out;
 }
 
-@media (min-width: 933px) and (max-width: 1024px) {
+@media (min-width: 934px) and (max-width: 1024px) {
   .burger div {
     width: 40.5px;
     height: 2px;
@@ -155,7 +171,7 @@ body {
   margin-bottom: 9px;
 }
 
-@media (min-width: 933px) and (max-width: 1024px) {
+@media (min-width: 934px) and (max-width: 1024px) {
   .line1 {
     margin-bottom: 15.5px;
   }
@@ -193,11 +209,11 @@ body {
   }
 }
 
-@media (min-width: 933px) and (max-width: 1024px) {
+@media (min-width: 934px) and (max-width: 1024px) {
   body {
     display: grid;
     grid:
-      "header" 9vh
+      "header" 14vh
       "main" 1fr
       "footer" max-content
       / 100%;
@@ -281,7 +297,7 @@ body {
   }
 }
 
-@media (min-width: 933px) and (max-width: 1024px) {
+@media (min-width: 934px) and (max-width: 1024px) {
   .caption {
     width: 77%;
     font-size: 26px;
@@ -335,7 +351,7 @@ body {
   }
 }
 
-@media (min-width: 933px) and (max-width: 1024px) {
+@media (min-width: 934px) and (max-width: 1024px) {
   .footer {
     display: grid;
     grid: max-content max-content max-content / 100%;
@@ -349,7 +365,7 @@ body {
   font-size: 19px;
 }
 
-@media (min-width: 933px) and (max-width: 1024px) {
+@media (min-width: 934px) and (max-width: 1024px) {
   .footer a {
     font-size: 26px;
   }
@@ -376,7 +392,7 @@ body {
   }
 }
 
-@media (min-width: 933px) and (max-width: 1024px) {
+@media (min-width: 934px) and (max-width: 1024px) {
   .menu {
     display: flex;
     justify-content: space-between;
@@ -387,7 +403,7 @@ body {
   }
 }
 
-@media (min-width: 933px) and (max-width: 1024px) {
+@media (min-width: 934px) and (max-width: 1024px) {
   .menu {
     padding-bottom: 59px;
   }
@@ -401,7 +417,7 @@ body {
   }
 }
 
-@media (min-width: 933px) and (max-width: 1024px) {
+@media (min-width: 934px) and (max-width: 1024px) {
   .menu a:first-child {
     padding-top: 0px;
   }
@@ -420,20 +436,32 @@ body {
   }
 }
 
-@media (min-width: 933px) and (max-width: 1024px) {
+@media (min-width: 934px) and (max-width: 1024px) {
   .social-icons {
     gap: 67.7px;
-    margin-bottom: 27px;
+    margin-bottom: 80px;
+    margin-top: 28px;
   }
 }
 .facebook-icon {
   width: 18.75px;
   height: 21.72px;
 }
-
+@media (min-width: 934px) and (max-width: 1024px) {
+  .facebook-icon {
+    width: 32.9px;
+    height: 38.12px;
+  }
+}
 .insta-icon {
   width: 20.82px;
   height: 20.81px;
+}
+@media (min-width: 934px) and (max-width: 1024px) {
+  .insta-icon {
+    width: 36.81px;
+    height: 36.8px;
+  }
 }
 
 .instagram {
@@ -446,11 +474,15 @@ body {
   text-align: center;
   margin-bottom: 17px;
 }
-
-.legals a {
-  font-size: 12px;
+@media (min-width: 934px) and (max-width: 1024px) {
+  .legals {
+    font-size: 19px;
+  }
 }
 
+.legals a {
+  font-size: 19px;
+}
 .toggle .line1 {
   rotate: 135deg;
   translate: 2.88px 5.74px;
@@ -459,6 +491,13 @@ body {
 .toggle .line2 {
   rotate: 45deg;
   translate: 2.88px -4.36px;
+}
+
+@media (min-width: 934px) and (max-width: 1024px) {
+  .toggle .line2 {
+    rotate: 45deg;
+    translate: 2.88px -11.36px;
+  }
 }
 @keyframes navLinkFade {
   from {
