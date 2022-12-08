@@ -18,13 +18,15 @@ body {
   grid:
     "header" 9vh
     "main" 1fr
-    /100%;
+    "footer" max-content
+    / 100%;
 }
 @media (orientation: landscape) and (max-width: 933px) {
   body {
     grid:
       "header" 14vh
       "main" 1fr
+      "footer" max-content
       / 100%;
   }
 }
@@ -32,8 +34,9 @@ body {
 @media (min-width: 934px) and (max-width: 1024px) {
   body {
     grid:
-      "header" 14vh
+      "header" 9vh
       "main" 1fr
+      "footer" max-content
       / 100%;
   }
 }
@@ -58,6 +61,11 @@ body {
 @media (min-width: 934px) and (max-width: 1024px) {
   .header {
     grid: 100% / 1fr 30% 40.5px;
+    padding-right: 32px;
+    padding-left: 32px;
+    padding-top: 4px;
+    /* position: fixed; */
+    /* top: -15px; */
   }
 }
 
@@ -78,6 +86,12 @@ body {
   .logo {
     position: relative;
     bottom: 10px;
+  }
+
+  @media (min-width: 934px) and (max-width: 1024px) {
+    .logo {
+      font-size: 53px;
+    }
   }
 
   .burger {
@@ -123,8 +137,8 @@ body {
 }
 @media (min-width: 934px) and (max-width: 1024px) {
   .nav-links {
-    height: 86vh;
-    top: 14vh;
+    height: 91vh;
+    top: 9vh;
     padding-bottom: 130px;
     /* overflow-y: scroll; */
   }
@@ -210,14 +224,6 @@ body {
 }
 
 @media (min-width: 934px) and (max-width: 1024px) {
-  body {
-    display: grid;
-    grid:
-      "header" 14vh
-      "main" 1fr
-      "footer" max-content
-      / 100%;
-  }
   .footer {
     grid-area: footer;
     margin-top: 194px !important;
@@ -341,6 +347,7 @@ body {
   margin-top: 111px;
   display: grid;
   grid: max-content max-content max-content / 100%;
+  grid-area: footer;
 }
 
 @media (orientation: landscape) and (max-width: 933px) {
@@ -531,6 +538,16 @@ body {
     padding-left: 16px;
   }
 }
+
+@media (min-width: 934px) and (max-width: 1024px) {
+  .page-title {
+    font-weight: 700;
+    font-style: normal;
+    font-size: 82px;
+    margin-top: 58px;
+    padding-left: 32px;
+  }
+}
 .main-text {
   font-family: soleil, sans-serif;
   font-weight: 400;
@@ -540,6 +557,17 @@ body {
   padding-right: 16px;
   line-height: 46px;
   margin-top: 7px;
+}
+
+@media (min-width: 934px) and (max-width: 1024px) {
+  .main-text {
+    padding-left: 32px;
+    padding-right: 32px;
+    font-size: 56px;
+    line-height: 78px;
+    padding-right: 32px;
+    padding-left: 32px;
+  }
 }
 
 .faq {
@@ -552,6 +580,23 @@ body {
   font-weight: 700;
   font-style: normal;
   font-size: 29px;
+}
+
+.faq svg {
+  width: 26px;
+  height: 15.16px;
+}
+@media (min-width: 934px) and (max-width: 1024px) {
+  .faq svg {
+    width: 40px;
+    height: 23.33px;
+  }
+}
+
+@media (min-width: 934px) and (max-width: 1024px) {
+  .faq h3 {
+    font-size: 56px;
+  }
 }
 .faq-title {
   display: flex;
@@ -574,6 +619,17 @@ body {
     margin-top: 48px;
   }
 }
+
+@media (min-width: 934px) and (max-width: 1024px) {
+  .faq-container {
+    width: 100%;
+    padding-left: 32px;
+    padding-right: 32px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 48px;
+  }
+}
 .faq-text {
   font-family: soleil, sans-serif;
   font-weight: 400;
@@ -584,6 +640,14 @@ body {
   max-height: 0px;
   overflow: hidden;
   transition: max-height 1.4s ease;
+}
+
+@media (min-width: 934px) and (max-width: 1024px) {
+  .faq-text {
+    font-size: 56px;
+    line-height: 78px;
+    margin-top: 7px;
+  }
 }
 
 .faq.active .faq-text {
@@ -630,10 +694,19 @@ svg {
     margin-top: 7px;
     float: left;
   }
-  .main-text {
-    position: relative;
-    top: -12px;
+}
+
+@media (min-width: 934px) and (max-width: 1024px) {
+  .about-portrait {
+    width: 93.33%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 7px;
   }
+}
+.main-text {
+  position: relative;
+  top: -12px;
 }
 
 .about-portrait__img {
