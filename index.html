@@ -23,6 +23,14 @@
       </div>
     </nav>
     <div class="main">
+      <img
+        src="icons/angle-left-solid.svg"
+        class="slider-buttons"
+        id="left"
+        style="width: 15px; height: 25.72px"
+        alt="icon"
+      />
+
       <div class="image-con">
         <img
           class="image-slides"
@@ -165,6 +173,14 @@
           alt=""
         />
       </div>
+      <img
+        src="icons/angle-right-solid.svg"
+        class="slider-buttons"
+        id="right"
+        style="width: 15px; height: 25.72px"
+        alt=""
+      />
+
       <div class="caption">
         <p class="image-title"></p>
         <div class="image-counter">
@@ -189,7 +205,7 @@
       let imageNum = document.querySelector(".image-num");
       const imageTotal = document.querySelector(".image-total");
       imageTotal.innerHTML = numberOfImages;
-      let index = 1;
+      let index = 0;
       let preScroll = 0;
       let scroll = 0;
       let step = 0;
@@ -233,6 +249,45 @@
       });
 
       //code for sliding images with buttons
+      const buttons = document.querySelectorAll(".slider-buttons");
+
+      buttons.forEach((button) => {
+        button.addEventListener("click", (e) => {
+          removeAnimation();
+
+          console.log("index", index);
+          console.log("scrll-left", imageContainer.scrollLeft);
+          if (e.target.id == "left") {
+            if (index == 0) return;
+            button.style.pointerEvents = "none";
+            index--;
+            setTimeout(() => {
+              captionAnimation();
+              imageContainer.scrollLeft -= containerWidth;
+              captionTitle.innerHTML = images[index].dataset.title;
+              imageNum.innerHTML = images[index].dataset.number;
+              setTimeout(() => {
+                button.style.pointerEvents = "auto";
+              }, 500);
+            }, 500);
+          } else if (e.target.id == "right") {
+            console.log("clicked right");
+            if (index == numberOfImages - 1) return;
+            button.style.pointerEvents = "none";
+            index++;
+            setTimeout(() => {
+              captionAnimation();
+              imageContainer.scrollLeft += containerWidth;
+              captionTitle.innerHTML = images[index].dataset.title;
+              imageNum.innerHTML = images[index].dataset.number;
+              setTimeout(() => {
+                button.style.pointerEvents = "auto";
+              }, 500);
+            }, 500);
+          }
+        });
+      });
+
       // end of code for sliding images with buttons
 
       const widthOfContainer = imageContainer.getBoundingClientRect().width;
