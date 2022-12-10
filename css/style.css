@@ -612,6 +612,13 @@ body {
     height: 38.12px;
   }
 }
+
+@media (min-width: 1025px) {
+  .facebook-icon {
+    width: 32.9px;
+    height: 38.12px;
+  }
+}
 .insta-icon {
   width: 20.82px;
   height: 20.81px;
@@ -623,6 +630,12 @@ body {
   }
 }
 
+@media (min-width: 1025px) {
+  .insta-icon {
+    width: 36.81px;
+    height: 36.8px;
+  }
+}
 .instagram {
   justify-self: start;
 }
@@ -700,8 +713,18 @@ body {
     font-weight: 700;
     font-style: normal;
     font-size: 82px;
-    margin-top: 58px;
+    margin-top: 41px;
     padding-left: 32px;
+  }
+}
+
+@media (min-width: 1025px) {
+  .page-title {
+    font-weight: 700;
+    font-style: normal;
+    font-size: 82px;
+    padding-left: 32px;
+    margin-top: 41px;
   }
 }
 .main-text {
@@ -721,11 +744,17 @@ body {
     padding-right: 32px;
     font-size: 56px;
     line-height: 78px;
-    padding-right: 32px;
-    padding-left: 32px;
   }
 }
 
+@media (min-width: 1025px) {
+  .main-text {
+    padding-left: 32px;
+    padding-right: 32px;
+    font-size: 56px;
+    line-height: 78px;
+  }
+}
 .faq {
   border-bottom: 1px solid black;
   cursor: pointer;
@@ -749,7 +778,20 @@ body {
   }
 }
 
+@media (min-width: 1025px) {
+  .faq svg {
+    width: 40px;
+    height: 23.33px;
+  }
+}
+
 @media (min-width: 934px) and (max-width: 1024px) {
+  .faq h3 {
+    font-size: 56px;
+  }
+}
+
+@media (min-width: 1025px) {
   .faq h3 {
     font-size: 56px;
   }
@@ -786,6 +828,18 @@ body {
     margin-top: 48px;
   }
 }
+
+@media (min-width: 1025px) {
+  .faq-container {
+    width: 100%;
+    padding-left: 32px;
+    padding-right: 32px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 110px;
+  }
+}
+
 .faq-text {
   font-family: soleil, sans-serif;
   font-weight: 400;
@@ -806,6 +860,14 @@ body {
   }
 }
 
+@media (min-width: 1025px) {
+  .faq-text {
+    font-size: 56px;
+    line-height: 78px;
+    margin-top: 15px;
+  }
+}
+
 .faq.active .faq-text {
   max-height: max-content;
   animation: fade 0.7s ease-in-out;
@@ -823,6 +885,11 @@ svg {
   margin-top: 15px;
 }
 
+@media (min-width: 934px) {
+  #returns {
+    margin-top: 30px;
+  }
+}
 @keyframes fade {
   from {
     opacity: 0;
