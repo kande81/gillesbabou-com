@@ -724,7 +724,7 @@ body {
     font-style: normal;
     font-size: 82px;
     padding-left: 32px;
-    margin-top: 41px;
+    margin-top: 15px;
   }
 }
 .main-text {
@@ -1007,6 +1007,14 @@ svg {
   }
 }
 
+@media (min-width: 1025px) {
+  .contact-form {
+    margin-top: 54px;
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+}
+
 .contact-form__input {
   width: 100%;
   padding-bottom: 19px;
@@ -1087,6 +1095,15 @@ svg {
     font-size: 34px;
   }
 }
+
+@media (min-width: 1025px) {
+  .contact-form__button {
+    width: 133px;
+    height: 61px;
+    font-size: 34px;
+  }
+}
+
 .contact-form__button p {
   display: block;
 }
@@ -1109,7 +1126,7 @@ svg {
   }
 }
 
-.message-success {
+#responsetext {
   font-family: soleil, sans-serif;
   font-weight: 400;
   font-style: normal;
@@ -1120,6 +1137,21 @@ svg {
   color: #3cb937;
 }
 
+@media (min-width: 934px) and (max-width: 1024px) {
+  #responsetext {
+    font-size: 34px;
+    margin-top: 28px;
+    padding-left: 32px;
+  }
+}
+
+@media (min-width: 1025px) {
+  #responsetext {
+    font-size: 34px;
+    margin-top: 38px;
+    padding-left: 32px;
+  }
+}
 @media (min-width: 934px) and (max-width: 1024px) {
   .contact-form {
     display: grid;
@@ -1140,7 +1172,7 @@ svg {
   }
   .contact-form__input {
     font-size: 26px;
-    margin-bottom: 56px;
+    margin-bottom: 36px;
     padding-bottom: 26px;
   }
   .contact-form__input::placeholder {
@@ -1166,6 +1198,55 @@ svg {
   }
 }
 
+@media (min-width: 1025px) {
+  .contact-form {
+    display: grid;
+    grid:
+      "name email" auto
+      "message message" auto
+      "button ." 61px
+      / 1fr 1fr;
+    grid-column-gap: 40px;
+  }
+
+  .contact-form__button {
+    grid-area: button;
+  }
+
+  #body1 {
+    grid-area: message;
+  }
+  .contact-form__input {
+    font-size: 26px;
+    margin-bottom: 36px;
+    padding-bottom: 26px;
+  }
+  .contact-form__input::placeholder {
+    font-size: 26px;
+  }
+
+  .body1::-webkit-scrollbar {
+    display: none;
+  }
+
+  .contact-form__message {
+    margin-bottom: 38px;
+    padding-bottom: 26px;
+    /* margin-top: 20px; */
+    overflow: auto;
+    padding-top: 0;
+    height: 60px;
+    font-size: 26px;
+  }
+
+  .contact-form__message::placeholder {
+    font-size: 26px;
+  }
+
+  .contact-form__message::-webkit-scrollbar {
+    display: none;
+  }
+}
 /* start of styles for legal pages */
 
 .legal-subhead {
