@@ -887,7 +887,7 @@ svg {
 
 @media (min-width: 934px) {
   #returns {
-    margin-top: 30px;
+    margin-top: 25px;
   }
 }
 @keyframes fade {
@@ -927,10 +927,26 @@ svg {
     margin-top: 7px;
   }
 }
+
+@media (min-width: 1025px) {
+  .about-portrait {
+    width: 48.33%;
+    margin-left: 32px;
+    margin-right: 32px;
+    margin-top: 32px;
+    float: left;
+  }
+}
 .main-text {
   position: relative;
   top: -12px;
 }
+
+@media (min-width: 1025px) {
+  .main-text {
+    top: 6px;
+  }
+
 
 .about-portrait__img {
   width: 100%;
