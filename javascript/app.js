@@ -27,6 +27,13 @@ burger.addEventListener("click", () => {
   burger.classList.toggle("toggle");
 });
 
-// end of code for displaying the menu when the hamburger icon is clicked
+// start of code for showing line under the active menu
+const page = main.getAttribute("id");
 
-// start of code for animating
+navLinks.forEach((link) => {
+  if (link.getAttribute("id") === page) {
+    link.style.borderBottom = "2px solid #000";
+    const style = window.getComputedStyle(link, "::after");
+    console.log(style);
+  }
+});

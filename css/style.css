@@ -59,7 +59,7 @@ body {
 .header {
   grid-area: header;
   display: grid;
-  grid: 100% / 1fr 30% 26.46px;
+  grid: 100% / 1fr 20% 26.46px;
   /* justify-content: space-between; */
   padding-top: 26px;
   padding-right: 16px;
@@ -114,6 +114,7 @@ body {
   color: rgb(0, 0, 0);
   position: relative;
   left: 9px;
+  bottom: 8px;
 }
 @media (orientation: landscape) and (max-width: 933px) {
   .logo {
@@ -203,6 +204,19 @@ body {
   .nav-links::-webkit-scrollbar {
     display: none;
   }
+
+  .nav-links li::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 2px;
+    background-color: rgb(0, 0, 0);
+    transition: width 0.3s;
+  }
+
+  .nav-links li:hover::after {
+    width: 100%;
+  }
 }
 .nav-links li {
   list-style: none;
@@ -225,6 +239,11 @@ body {
   font-weight: 400;
   font-style: normal;
   font-size: 56px;
+}
+
+.logo a {
+  text-decoration: none;
+  color: rgb(0, 0, 0);
 }
 
 @media (min-width: 1025px) {
@@ -333,12 +352,10 @@ body {
   display: none;
 }
 
-@media (orientation: landscape) and (max-width: 933px) {
+/* @media (orientation: landscape) and (max-width: 933px) {
   .slider-buttons {
     display: block;
     position: absolute;
-    /* color: black; */
-    /* background-color: black; */
   }
   #left {
     left: 143px;
@@ -348,7 +365,7 @@ body {
     right: 143px;
     top: 178px;
   }
-}
+} */
 
 @media (min-width: 1025px) {
   .slider-buttons {
@@ -510,7 +527,6 @@ body {
   text-decoration: none;
   display: inline-block;
   font-weight: 300;
-  font-size: 19px;
 }
 
 @media (min-width: 934px) and (max-width: 1024px) {
@@ -528,6 +544,7 @@ body {
   margin-right: auto;
   border-bottom: 1px solid white;
   padding-bottom: 33px;
+  font-size: 19px;
 }
 @media (orientation: landscape) and (max-width: 933px) {
   .menu {
@@ -1261,5 +1278,11 @@ svg {
 @media (min-width: 934px) and (max-width: 1024px) {
   .legal-subhead {
     font-size: 63px;
+  }
+}
+
+@media (min-width: 1025px) {
+  .legal-subhead {
+    font-size: 76px;
   }
 }

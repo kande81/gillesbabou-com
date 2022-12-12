@@ -10,9 +10,8 @@
   </head>
   <body>
     <nav class="header">
-      <h1 class="logo">gilles babou</h1>
+      <h1 class="logo"><a href="index.php">gilles babou</a></h1>
       <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
         <li><a href="Prints.html">Prints</a></li>
         <li><a href="About.php">About</a></li>
         <li><a href="Contact.php">Contact</a></li>
@@ -22,7 +21,7 @@
         <div class="line2"></div>
       </div>
     </nav>
-    <div class="main">
+    <div class="main" id="home">
       <img
         src="icons/angle-left-solid.svg"
         class="slider-buttons"
@@ -196,7 +195,6 @@
       let bar = document.querySelector(".bar");
       const imageContainer = document.querySelector(".image-con");
       console.log("width", imageContainer.clientWidth);
-      const containerWidth = imageContainer.clientWidth;
       const images = document.querySelectorAll(".image-slides");
       console.log(images[0].dataset.title);
       const caption = document.querySelector(".caption");
@@ -231,20 +229,18 @@
       //code for sliding images with touch
       imageContainer.addEventListener("touchend", (e) => {
         removeAnimation();
-        console.log("scroll", scroll, "preScroll", preScroll);
+        let containerWidth = imageContainer.clientWidth;
 
         setTimeout(() => {
-          console.log("index after touch", index);
           scroll = imageContainer.scrollLeft;
 
           if (scroll == preScroll) return;
           step = Math.round((scroll - preScroll) / containerWidth);
           index = index + step;
           captionAnimation();
-          captionTitle.innerHTML = images[index - 1].dataset.title;
-          imageNum.innerHTML = images[index - 1].dataset.number;
+          captionTitle.innerHTML = images[index].dataset.title;
+          imageNum.innerHTML = images[index].dataset.number;
           preScroll = scroll;
-          console.log("index after scroll", index);
         }, 800);
       });
 
@@ -255,8 +251,6 @@
         button.addEventListener("click", (e) => {
           removeAnimation();
 
-          console.log("index", index);
-          console.log("scrll-left", imageContainer.scrollLeft);
           if (e.target.id == "left") {
             if (index == 0) return;
             button.style.pointerEvents = "none";
@@ -271,7 +265,6 @@
               }, 500);
             }, 500);
           } else if (e.target.id == "right") {
-            console.log("clicked right");
             if (index == numberOfImages - 1) return;
             button.style.pointerEvents = "none";
             index++;
@@ -333,8 +326,7 @@
     </script>
     <div class="footer">
       <div class="menu">
-        <a href="index.php">Home</a>
-        <a href="Prints.html">Prints</a>
+        <a href="Prints.php">Prints</a>
         <a href="About.php">About</a>
         <a href="Contact.php">Contact</a>
       </div>
