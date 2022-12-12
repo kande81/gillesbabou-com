@@ -1102,6 +1102,8 @@ svg {
   color: white;
   line-height: 29px;
   text-align: center;
+  cursor: pointer;
+  border: none;
 }
 
 @media (min-width: 934px) and (max-width: 1024px) {
