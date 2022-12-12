@@ -192,8 +192,11 @@
     <script>
       const leftbtn = document.querySelector("#left");
       const rightbtn = document.querySelector("#right");
+
       let bar = document.querySelector(".bar");
       const imageContainer = document.querySelector(".image-con");
+      const containerWidth = imageContainer.clientWidth;
+
       console.log("width", imageContainer.clientWidth);
       const images = document.querySelectorAll(".image-slides");
       console.log(images[0].dataset.title);
@@ -229,7 +232,6 @@
       //code for sliding images with touch
       imageContainer.addEventListener("touchend", (e) => {
         removeAnimation();
-        let containerWidth = imageContainer.clientWidth;
 
         setTimeout(() => {
           scroll = imageContainer.scrollLeft;

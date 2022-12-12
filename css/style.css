@@ -291,7 +291,7 @@ body {
 /* start of style for home page */
 
 .image-con {
-  width: 92.23%;
+  width: 380px;
   margin-top: 71px;
   margin-left: auto;
   margin-right: auto;
@@ -306,7 +306,7 @@ body {
 
 @media (orientation: landscape) and (max-width: 933px) {
   .image-con {
-    width: 47.01%;
+    width: 380px;
     margin-top: 25px;
     margin-left: auto;
     margin-right: auto;
@@ -390,7 +390,7 @@ body {
   pointer-events: none;
 }
 .caption {
-  width: 92.23%;
+  width: 380px;
   margin-left: auto;
   margin-right: auto;
 
@@ -405,7 +405,7 @@ body {
 
 @media (orientation: landscape) and (max-width: 933px) {
   .caption {
-    width: 47.01%;
+    width: 380px;
     margin-left: auto;
     margin-right: auto;
     /* margin-top: -13px; */
