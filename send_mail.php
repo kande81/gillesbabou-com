@@ -42,3 +42,5 @@ if ($mail->send()) {
 } else {
     echo 'Mailer error: ' . $mail->ErrorInfo;
 }
+
+?>

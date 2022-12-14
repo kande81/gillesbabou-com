@@ -8,6 +8,7 @@ html,
 body {
   height: 100vh;
   width: 100vw;
+  -webkit-tap-highlight-color: transparent !important;
 }
 
 @media (min-width: 1025px) {
@@ -337,6 +338,11 @@ body {
   }
 }
 
+@media (hover: hover) {
+  .image-con {
+    pointer-events: none;
+  }
+}
 .image-con::-webkit-scrollbar {
   width: 0px;
 }
@@ -385,6 +391,24 @@ body {
     top: 48%;
   }
 }
+
+/* @media (hover: hover) {
+  .slider-buttons {
+    display: block;
+    position: absolute;
+    cursor: pointer;
+  }
+
+  #left {
+    left: 21.4%;
+    top: 48%;
+  }
+
+  #right {
+    right: 21.4%;
+    top: 48%;
+  }
+} */
 
 .btn-svg {
   pointer-events: none;
@@ -776,6 +800,8 @@ body {
   border-bottom: 1px solid black;
   cursor: pointer;
   padding-bottom: 15px;
+
+  outline: none !important;
 }
 .faq h3 {
   font-family: soleil, sans-serif;
