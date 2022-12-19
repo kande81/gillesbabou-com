@@ -5,10 +5,10 @@
         <a href="contact.php">Contact</a>
       </div>
       <div class="social-icons">
-        <a href=""
+        <a href="#"
           ><img src="icons/facebook.svg" class="facebook-icon" alt=""
         /></a>
-        <a href="" class="instagram"
+        <a href="#" class="instagram"
           ><img src="icons/instagram.svg" class="insta-icon" alt=""
         /></a>
       </div>

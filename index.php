@@ -7,7 +7,6 @@
         src="icons/angle-left-solid.svg"
         class="slider-buttons"
         id="left"
-        style="width: 15px; height: 25.72px"
         alt="icon"
       />
 
@@ -17,63 +16,72 @@
           data-title="flowers in the city"
           data-number="1"
           src="images/flowers-in-the-city_web_1500_6x4.jpg"
-          alt=""
+          alt="" data-hires_width="2592" data-hires_height="1944"
         />
         <img
           class="image-slides"
           data-title="bible study"
           data-number="2"
           src="images/bible study-web-1500-6x4.jpg"
-          alt=""
+          alt="" data-hires_width="4272"
+          data-hires_height="2848"
         />
         <img
           class="image-slides"
           data-title="bird lady"
           data-number="3"
           src="images/bird-lady-web-1500-6x4.jpg"
-          alt=""
+          alt="" data-hires_width="4272"
+          data-hires_height="2848"
         />
         <img
           class="image-slides"
           data-title="birthday boy"
           data-number="4"
           src="images/birthday-boy-web-1500-6x4.jpg"
-          alt=""
+          alt="" data-hires_width="4272"
+          data-hires_height="2848"
         />
         <img
           class="image-slides"
           data-title="dancing queen"
           data-number="5"
           src="images/Dancing-queen-in-venice-web-1500-6x4.jpg"
-          alt=""
+          alt="" data-hires_width="4272"
+        
+          data-hires_height="2848"
         />
         <img
           class="image-slides"
           data-title="father and daughter"
           data-number="6"
           src="images/father-and-daughter-web-1500-6x4.jpg"
-          alt=""
+          alt="" data-hires_width="4272"
+          data-hires_height="2848"
         />
         <img
           class="image-slides"
           data-title="girls love a man in uniform"
           data-number="7"
           src="images/Girls-love-a-man-in-uniform-web-1500-6x4.jpg"
-          alt=""
+          alt="" data-hires_width="2560"
+          data-hires_height="1920"
         />
         <img
           class="image-slides"
           data-title="hapiness in venice"
           data-number="8"
           src="images/happiness-in-venice-web-1500-6x4.jpg"
-          alt=""
+          alt="" data-hires_width="4272"
+          data-hires_height="2848"
         />
         <img
           class="image-slides"
           data-title="inside the venice beach drum circle"
           data-number="9"
           src="images/inside-the-venice-beach-drum-circle-6-web-1500-6x4.jpg"
-          alt=""
+          alt="" data-hires_width="4272"
+          data-hires_height="2848"
         />
         <img
           class="image-slides"
@@ -81,13 +89,16 @@
           data-number="10"
           src="images/The-red-dress-in-the-circle-web-1500-6x4.jpg"
           alt=""
+          data-hires_width="4272"
+          data-hires_height="2848"
         />
         <img
           class="image-slides"
           data-title="trance in venice"
           data-number="11"
           src="images/Trance-in-venice-2-web-1500-6x4.jpg"
-          alt=""
+          alt="" data-hires_width="4272"
+          data-hires_height="2848"
         />
         <img
           class="image-slides"
@@ -95,41 +106,49 @@
           data-number="12"
           src="images/love-behind bars-web-1500-6x4.jpg"
           alt=""
+          data-hires_width="4272"
+          data-hires_height="2848"
         />
         <img
           class="image-slides"
           data-title="more than a game"
           data-number="13"
           src="images/more-than-a game-2-web-1500-6x4.jpg"
-          alt=""
+          alt="" data-hires_width="4272"
+          data-hires_height="2848"
         />
         <img
           class="image-slides"
           data-title="pre kiss faces"
           data-number="14"
           src="images/pre-kiss-faces-web-1500-6x4.jpg"
-          alt=""
+          alt="" data-hires_width="4272"
+          data-hires_height="2848"
         />
         <img
           class="image-slides"
           data-title="the kiss"
           data-number="15"
           src="images/the-kiss-web-1500-6x4.jpg"
-          alt=""
+          alt="" data-hires_width="4272"
+          data-hires_height="2848"
         />
         <img
           class="image-slides"
           data-title="spring st dtla"
           data-number="16"
           src="images/spring-st-dtla-web-1500-6x4.jpg"
-          alt=""
+          alt="" data-hires_width="4272"
+          data-hires_height="2848"
         />
         <img
           class="image-slides"
           data-title="street games"
           data-number="17"
           src="images/street-games-web-1500-6x4.jpg"
-          alt=""
+          alt=""data-hires_width="4272"
+          data-hires_height="2848"
+
         />
         <img
           class="image-slides"
@@ -137,27 +156,31 @@
           data-number="18"
           src="images/the-dice-game_web_1500_6x4.jpg"
           alt=""
+          data-hires_width="2592"
+          data-hires_height="1944"
+
         />
         <img
           class="image-slides"
           data-title="the flag"
           data-number="19"
           src="images/the-flag-web-1500-6x4.jpg"
-          alt=""
+          alt=""data-hires_width="4272"
+          data-hires_height="2848"
         />
         <img
           class="image-slides"
           data-title="the geisha"
           data-number="20"
           src="images/the-geisha_web_1500_6x4.jpg"
-          alt=""
+          alt=""data-hires_width="4272"
+          data-hires_height="2848"
         />
       </div>
       <img
         src="icons/angle-right-solid.svg"
         class="slider-buttons"
         id="right"
-        style="width: 15px; height: 25.72px"
         alt=""
       />
 
@@ -169,7 +192,13 @@
           <span class="image-total" style="display: inline-block"></span>
         </div>
       </div>
+      <div class="btn-cont"><button name='buy prints' class='buy-btn'>Buy Print</button>
+</div>
+
     </div>
+    <script type="text/javascript" src="//widget.fotomoto.com/stores/script/f1632ee338083f14ecf5f0b9e47fc55370b192e3.js?api=true"></script>
+<noscript>If Javascript is disabled in your browser, to place orders please visit the page where I <a href=' https://my.fotomoto.com/store/f1632ee338083f14ecf5f0b9e47fc55370b192e3'>sell my photos</a>, powered by <a href='https://my.fotomoto.com'>Fotomoto</a>.</noscript>
+
     <script>
       const leftbtn = document.querySelector("#left");
       const rightbtn = document.querySelector("#right");
@@ -263,7 +292,10 @@
           }
         });
       });
-
+const buyBtn = document.querySelector('.buy-btn');
+buyBtn.addEventListener('click', (e) => {
+  FOTOMOTO.API.showWindow(FOTOMOTO.API.PRINT, `${images[index].src}`);
+});
       // end of code for sliding images with buttons
 
       const widthOfContainer = imageContainer.getBoundingClientRect().width;

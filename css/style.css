@@ -6,15 +6,15 @@
 
 html,
 body {
-  height: 100vh;
-  width: 100vw;
+  min-height: 100%;
+  width: 100%;
   -webkit-tap-highlight-color: transparent !important;
 }
 
 @media (min-width: 1025px) {
   html,
   body {
-    height: 100vh;
+    min-height: 100%;
     width: 100vw;
   }
 }
@@ -358,20 +358,56 @@ body {
   display: none;
 }
 
-/* @media (orientation: landscape) and (max-width: 933px) {
+@media (hover: hover) and (max-width: 432px) {
   .slider-buttons {
     display: block;
     position: absolute;
+    height: 20.46px;
+    width: 11.94px;
   }
   #left {
-    left: 143px;
-    top: 178px;
+    left: 32px;
+    top: 120px;
   }
   #right {
-    right: 143px;
-    top: 178px;
+    right: 32px;
+    top: 120px;
   }
-} */
+}
+
+@media (hover: hover) and (min-width: 432px) and (max-width: 933px) {
+  .slider-buttons {
+    display: block;
+    position: absolute;
+    height: 31.36px;
+    width: 18.19px;
+  }
+  #left {
+    left: 4%;
+    top: 302.4px;
+  }
+  #right {
+    right: 4%;
+    top: 302.4px;
+  }
+}
+
+@media (hover: hover) and (min-width: 934px) {
+  .slider-buttons {
+    display: block;
+    position: absolute;
+    height: 31.36px;
+    width: 18.19px;
+  }
+  #left {
+    left: 4%;
+    top: 382.4px;
+  }
+  #right {
+    right: 4%;
+    top: 382.4px;
+  }
+}
 
 @media (min-width: 1025px) {
   .slider-buttons {
@@ -383,12 +419,12 @@ body {
   #left {
     /* position: absolute; */
     left: 21.4%;
-    top: 48%;
+    top: 24.6vw;
   }
 
   #right {
     right: 21.4%;
-    top: 48%;
+    top: 24.6vw;
   }
 }
 
@@ -427,6 +463,69 @@ body {
   cursor: pointer;
 }
 
+.btn-cont {
+  width: 380px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 0;
+  margin-top: 15px;
+}
+
+.buy-btn {
+  display: grid;
+  width: 70px;
+  height: 23px;
+  background-color: #000000;
+  color: #ffffff;
+  font-family: soleil, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 15px;
+  border: none;
+  cursor: pointer;
+  padding: 0.33em 0.13em;
+  place-content: center center;
+  left: 0;
+}
+
+@media (orientation: landscape) and (max-width: 933px) {
+  .btn-cont {
+    margin-top: 2px;
+  }
+}
+
+@media (min-width: 934px) and (max-width: 1024px) {
+  .btn-cont {
+    width: 77%;
+  }
+}
+
+@media (min-width: 934px) and (max-width: 1024px) {
+  .buy-btn {
+    font-size: 22px;
+    width: 104px;
+    height: 34px;
+    /* padding: 0.33em 0.13em; */
+  }
+}
+
+@media (min-width: 1025px) {
+  .btn-cont {
+    width: 45.1%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15px;
+  }
+}
+
+@media (min-width: 1025px) {
+  .buy-btn {
+    font-size: 22px;
+    width: 104px;
+    height: 34px;
+    /* padding: 0.33em 0.13em; */
+  }
+}
 @media (orientation: landscape) and (max-width: 933px) {
   .caption {
     width: 380px;
@@ -737,7 +836,9 @@ body {
   margin-top: 24px;
   padding-left: 16px;
 }
-
+#print-prices {
+  margin-left: 50px;
+}
 @media (orientation: landscape) and (max-width: 933px) {
   .page-title {
     font-family: soleil, sans-serif;
@@ -802,6 +903,10 @@ body {
   padding-bottom: 15px;
 
   outline: none !important;
+}
+
+.faq a {
+  color: black;
 }
 .faq h3 {
   font-family: soleil, sans-serif;
@@ -1179,6 +1284,7 @@ svg {
   padding-left: 16px;
   padding-right: 16px;
   color: #3cb937;
+  overflow-wrap: anywhere;
 }
 
 @media (min-width: 934px) and (max-width: 1024px) {

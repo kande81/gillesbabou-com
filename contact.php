@@ -6,7 +6,7 @@
         If you have any questions, you can reach me at (213) 792-2109 or you can
         fill out the form below and I will get back at you promptly.
       </div>
-      <div class="contact-form">
+      <form  class="contact-form">
         <input
           type="text"
           placeholder="Name*"
@@ -32,12 +32,12 @@
         ></textarea>
         <button
           class="contact-form__button"
-          onclick="formSubmit(this,name1.value, email1.value, body1.value)"
+          
         >
           <p id="button-text">SEND</p>
           <div class="contact-form__circle"></div>
         </button>
-      </div>
+      </form>
       <div id="responsetext"></div>
     </div>
     <script>
@@ -59,32 +59,36 @@
         message.style.height = height + "px";
       });
 
-      function formSubmit(btn, n, e, b) {
+  
         const buttonText = document.querySelector("#button-text");
         const buttonCircle = document.querySelector(".contact-form__circle");
+        const contactForm = document.querySelector(".contact-form");
+        const btn = document.querySelector(".contact-form__button");
 
-        const url = "send_mail.php?name=" + n + "&email=" + e + "&body=" + b;
-        console.log(url);
-        const xhr = new XMLHttpRequest();
-        xhr.open("GET", url, false);
-        xhr.send();
-        console.log(response);
+        contactForm.addEventListener("submit", (e) => {
+          e.preventDefault();
+          n = name1.value;
+        e = email1.value;
+        b = body1.value;
 
-
-        let response;
-        while (!response) {
           btn.style.background = "white";
-          buttonText.style.display = "none";
-          buttonCircle.style.display = "block";
-          response = xhr.responseText;
-        }
-
-        btn.style.background = "black";
+                    buttonText.style.display = "none";
+                    buttonCircle.style.display = "block";
+                    setTimeout(() => {
+                      btn.style.background = "black";
         buttonText.style.display = "block";
         buttonCircle.style.display = "";
-
         console.log("hello");
-        responsetext.innerHTML = response;
-      }
+        responsetext.innerHTML = 'Thank you, we\'ve received your message!';
+      }, 1500)
+
+axios.get("send_mail.php?name=" + n + "&email=" + e + "&body=" + b).then((response) => {
+                      console.log(response);
+         })
+          
+        });
+
+
+      
     </script>
 <?php include('partials/footer.php'); ?>

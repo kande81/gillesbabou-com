@@ -13,26 +13,26 @@ class Config
      *
      * @var string
      */
-    const SMTP_HOST = 'smtp.gmail.com';
+    const SMTP_HOST = 'localhost';
 
     /**
      * SMTP port
      *
      * @var int
      */
-    const SMTP_PORT = 587;
+    const SMTP_PORT = 25;
 
     /**
      * SMTP user
      *
      * @var string
      */
-    const SMTP_USER = 'yannickbabou@gmail.com';
+    // const SMTP_USER = 'info@gillesbabou.com';
 
     /**
      * SMTP password
      *
      * @var string
      */
-    const SMTP_PASSWORD = 'xwxivnixelwqwofi';
+    // const SMTP_PASSWORD = 'Nolimit@1';
 }

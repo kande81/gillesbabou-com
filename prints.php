@@ -8,7 +8,13 @@
         All the images are printed on the Epson Exhibition Fiber fine art paper
         using archival ink, making the prints last longer than a lifetime. The
         images are printed at the world famous Bayphoto photo lab in Scotts
-        Valley, California. The prints come in one size, 20x14".
+        Valley, California. The prints come in various sizes:
+        <ul id='print-prices'>
+          <li>8x12 and 8x10.7: &nbsp;$600</li>
+          <li>10x15 and 10x13.3:  &nbsp;$750</li>
+          <li>12x18 and 12x16:  &nbsp;$900</li>
+          <li>16x24 and 16x21.3:  &nbsp;$1,200</li>
+        </ul>
       </div>
       <div class="faq-container">
         <div class="faq" id="shipping">
@@ -30,8 +36,8 @@
               order, you should receive an email confirmation with a link to
               check the status of your order. Once your order has shipped , you
               should receive a shipping confirmation email. If you're having any
-              problems receiving your order, please first contact Fotomoto
-              support with your order number. You can also contact me and I will
+              problems receiving your order, please first  contact <a href='https://support.fotomoto.com/s/contactsupport'>Fotomoto</a>
+              support with your order number. You can also <a href='contact.php'>contact me</a> and I will
               investigate the matter and get back to you promptly. Shipping is
               done via UPS, USPS, and FedEx to anywhere in the world those
               companies ship.
@@ -54,9 +60,9 @@
               Due to the nature of print art, we can't accept returns on the
               prints once you have received them. However, if there is an issue
               with the quality of the prints or if the prints are damaged then
-              please contact Fotomoto support and they will gladly offer you a
+              please contact <a href='https://support.fotomoto.com/s/contactsupport'>Fotomoto</a> support and they will gladly offer you a
               reprint. If you are having problems getting in touch with FotoMoto
-              you can also contact me and I will get back to you promptly.
+              you can also  <a href='contact.php'>contact me</a> and I will get back to you promptly.
             </p>
           </div>
         </div>
