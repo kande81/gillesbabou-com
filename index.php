@@ -3,14 +3,14 @@
 ?>
 
     <div class="main" id="home">
-      <img
-        src="icons/angle-left-solid.svg"
-        class="slider-buttons"
-        id="left"
-        alt="icon"
-      />
 
       <div class="image-con">
+      <svg xmlns="http://www.w3.org/2000/svg" class="slider-buttons" id="left"  viewBox="0 0 15 25.719">
+  <path id="angle-left-solid" d="M32.653,75.271a2.146,2.146,0,0,0,0,3.033L43.365,89.016A2.145,2.145,0,1,0,46.4,85.983l-9.2-9.2,9.192-9.2a2.145,2.145,0,1,0-3.033-3.033L32.646,75.265Z" transform="translate(-32.025 -63.925)"/>
+</svg>
+
+
+        <div class="image-con__images">
         <img
           class="image-slides"
           data-title="flowers in the city"
@@ -176,13 +176,14 @@
           alt=""data-hires_width="4272"
           data-hires_height="2848"
         />
+
+        </div>
+      <svg xmlns="http://www.w3.org/2000/svg"  class="slider-buttons"  id="right"
+viewBox="0 0 15 25.719">
+  <path id="angle-right-solid" d="M78.3,75.271a2.146,2.146,0,0,1,0,3.033L67.585,89.016a2.145,2.145,0,0,1-3.033-3.033l9.2-9.2-9.192-9.2a2.145,2.145,0,0,1,3.033-3.033L78.3,75.265Z" transform="translate(-63.925 -63.925)"/>
+</svg>
+
       </div>
-      <img
-        src="icons/angle-right-solid.svg"
-        class="slider-buttons"
-        id="right"
-        alt=""
-      />
 
       <div class="caption">
         <p class="image-title"></p>
@@ -204,8 +205,6 @@
       const rightbtn = document.querySelector("#right");
 
       let bar = document.querySelector(".bar");
-      const imageContainer = document.querySelector(".image-con");
-      const containerWidth = imageContainer.clientWidth;
 
       console.log("width", imageContainer.clientWidth);
       const images = document.querySelectorAll(".image-slides");
@@ -262,6 +261,10 @@
       buttons.forEach((button) => {
         button.addEventListener("click", (e) => {
           removeAnimation();
+          const imageContainer = document.querySelector(".image-con");
+          const containerWidth = imageContainer.clientWidth;
+
+
 
           if (e.target.id == "left") {
             if (index == 0) return;

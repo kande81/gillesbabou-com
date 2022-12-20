@@ -292,19 +292,25 @@ body {
 /* start of style for home page */
 
 .image-con {
-  width: 380px;
+  width: 92.23%;
   margin-top: 71px;
   margin-left: auto;
   margin-right: auto;
-  display: flex;
-  overflow-x: scroll;
+  /* overflow-x: scroll; */
   /* overflow-y: hidden; */
   position: relative;
-  scroll-behavior: smooth;
-  scroll-snap-type: x mandatory;
+  /* scroll-behavior: smooth; */
+  /* scroll-snap-type: x mandatory; */
   cursor: grab;
+  align-items: center;
+  display: flex;
+  overflow: hidden;
 }
 
+.image-con__images {
+  display: flex;
+  transform: translateX(0);
+}
 @media (orientation: landscape) and (max-width: 933px) {
   .image-con {
     width: 380px;
@@ -351,47 +357,30 @@ body {
   width: 100%;
   height: auto;
   /* display: none; */
-  flex-shrink: 0;
-  scroll-snap-align: start;
+  /* flex-shrink: 0; */
+  /* scroll-snap-align: start; */
 }
 .slider-buttons {
-  display: none;
+  position: absolute;
+  width: 11.94px;
+  height: 20.46px;
+  fill: white;
+  /* opacity: 0.8; */
+  filter: drop-shadow(5px 5px 5px black);
+
+  /* display: none; */
+  z-index: 1;
 }
 
-@media (hover: hover) and (max-width: 432px) {
-  .slider-buttons {
-    display: block;
-    position: absolute;
-    height: 20.46px;
-    width: 11.94px;
-  }
-  #left {
-    left: 32px;
-    top: 120px;
-  }
-  #right {
-    right: 32px;
-    top: 120px;
-  }
+#left {
+  left: 0px;
+  top: calc(50% - 10.23px);
 }
 
-@media (hover: hover) and (min-width: 432px) and (max-width: 933px) {
-  .slider-buttons {
-    display: block;
-    position: absolute;
-    height: 31.36px;
-    width: 18.19px;
-  }
-  #left {
-    left: 4%;
-    top: 302.4px;
-  }
-  #right {
-    right: 4%;
-    top: 302.4px;
-  }
+#right {
+  right: 0px;
+  top: calc(50% - 10.23px);
 }
-
 @media (hover: hover) and (min-width: 934px) {
   .slider-buttons {
     display: block;
@@ -429,7 +418,7 @@ body {
 }
 
 /* @media (hover: hover) {
-  .slider-buttons {
+  .slider-buttons { 
     display: block;
     position: absolute;
     cursor: pointer;
