@@ -434,7 +434,7 @@ body {
   pointer-events: none;
 }
 .caption {
-  width: 92.23%;
+  width: 380px;
   margin-left: auto;
   margin-right: auto;
 
@@ -445,6 +445,21 @@ body {
   font-style: normal;
   font-size: 19px;
   cursor: pointer;
+}
+
+@media (orientation: landscape) and (max-width: 933px) {
+  .caption {
+    width: 380px;
+    margin-left: auto;
+    margin-right: auto;
+    /* margin-top: -13px; */
+    display: flex;
+    justify-content: space-between;
+    font-family: soleil, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 19px;
+  }
 }
 
 .btn-cont {
@@ -508,20 +523,6 @@ body {
     width: 104px;
     height: 34px;
     /* padding: 0.33em 0.13em; */
-  }
-}
-@media (orientation: landscape) and (max-width: 933px) {
-  .caption {
-    width: 47%;
-    margin-left: auto;
-    margin-right: auto;
-    /* margin-top: -13px; */
-    display: flex;
-    justify-content: space-between;
-    font-family: soleil, sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 19px;
   }
 }
 
