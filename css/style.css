@@ -407,6 +407,16 @@ body {
   }
 }
 
+@media (min-width: 1025px) {
+  .slider-buttons__svg {
+    filter: unset;
+    pointer-events: none;
+    opacity: unset;
+    fill: black;
+    width: 18.29px;
+    height: 31.36px;
+  }
+}
 #left {
   left: 6vw;
   top: 22.3vh;
@@ -443,6 +453,20 @@ body {
   #right {
     right: 3.3vw;
     top: 30.3vh;
+    z-index: 1;
+  }
+}
+
+@media (min-width: 1025px) {
+  #left {
+    left: 21.4vw;
+    top: 18.5vw;
+    z-index: 1;
+  }
+
+  #right {
+    right: 21.4vw;
+    top: 18.5vw;
     z-index: 1;
   }
 }
