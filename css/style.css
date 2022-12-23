@@ -387,6 +387,15 @@ body {
   height: 20.46px;
 }
 
+@media (orientation: landscape) and (max-width: 933px) {
+  .slider-buttons__svg {
+    filter: unset;
+    pointer-events: none;
+    opacity: unset;
+    fill: black;
+  }
+}
+
 #left {
   left: 6vw;
   top: 22.3vh;
@@ -402,13 +411,13 @@ body {
 @media (orientation: landscape) and (max-width: 933px) {
   #left {
     left: 18.3vw;
-    top: 18.6vw;
+    top: 31vh;
     z-index: 1;
   }
 
   #right {
     right: 18.3vw;
-    top: 18.6vw;
+    top: 31vh;
     z-index: 1;
   }
 }

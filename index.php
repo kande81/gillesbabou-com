@@ -7,9 +7,6 @@
         <svg
           class="slider-buttons__svg"
           xmlns="http://www.w3.org/2000/svg"
-          width="11.94"
-          height="20.46"
-          fill="white"
           viewBox="0 0 15 25.719"
         >
           <path
@@ -347,7 +344,6 @@
               rightBtn.style.pointerEvents = "auto";
             }
           } else if (e.target.id === "right") {
-            console.log("hit");
             // else if next button
             if (index !== numberOfImages - 1) {
               // check to see if we are at the last image
