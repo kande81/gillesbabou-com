@@ -396,6 +396,17 @@ body {
   }
 }
 
+@media (min-width: 934px) and (max-width: 1024px) {
+  .slider-buttons__svg {
+    filter: unset;
+    pointer-events: none;
+    opacity: unset;
+    fill: black;
+    width: 18.29px;
+    height: 31.36px;
+  }
+}
+
 #left {
   left: 6vw;
   top: 22.3vh;
@@ -421,26 +432,23 @@ body {
     z-index: 1;
   }
 }
-@media (min-width: 1025px) {
-}
 
-/* @media (hover: hover) {
-  .slider-buttons { 
-    display: block;
-    position: absolute;
-    cursor: pointer;
-  }
-
+@media (min-width: 934px) and (max-width: 1024px) {
   #left {
-    left: 21.4%;
-    top: 48%;
+    left: 3.3vw;
+    top: 30.3vh;
+    z-index: 1;
   }
 
   #right {
-    right: 21.4%;
-    top: 48%;
+    right: 3.3vw;
+    top: 30.3vh;
+    z-index: 1;
   }
-} */
+}
+
+@media (min-width: 1025px) {
+}
 
 .btn-svg {
   pointer-events: none;

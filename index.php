@@ -219,8 +219,6 @@
           class="slider-buttons__svg"
           xmlns="http://www.w3.org/2000/svg"
           width="11.94"
-          fill="white"
-          height="20.46"
           viewBox="0 0 15 25.719"
         >
           <path
