@@ -382,17 +382,20 @@ body {
   filter: drop-shadow(2px 2px 2px black);
   pointer-events: none;
   opacity: 0.8;
+  fill: white;
+  width: 11.94px;
+  height: 20.46px;
 }
 
 #left {
   left: 6vw;
-  top: 47vw;
+  top: 22.3vh;
   z-index: 1;
 }
 
 #right {
   right: 6vw;
-  top: 47vw;
+  top: 22.3vh;
   z-index: 1;
 }
 
