@@ -338,7 +338,7 @@ body {
 
 @media (min-width: 1025px) {
   .image-con {
-    width: 45.1%;
+    width: 45%;
     margin-top: 84px;
     margin-left: auto;
     margin-right: auto;
@@ -376,6 +376,7 @@ body {
   /* border: none; */
   /* width: 40px;
   height: 40px; */
+  cursor: pointer;
 }
 
 .slider-buttons__svg {
