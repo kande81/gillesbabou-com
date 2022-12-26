@@ -744,9 +744,10 @@ body {
 }
 .social-icons {
   display: grid;
-  grid: max-content/ 1fr 1fr;
-  justify-items: end;
-  gap: 36px;
+  /* grid: max-content/ 1fr 1fr; */
+  /* justify-items: end; */
+  /* gap: 36px; */
+  place-items: center center;
   margin-top: 8px;
   margin-bottom: 27px;
 }
