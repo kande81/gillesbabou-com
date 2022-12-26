@@ -17,4 +17,3 @@ jobs:
           server: 208.109.77.12
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD}}
-          server-dir: public_html/deploy-test/

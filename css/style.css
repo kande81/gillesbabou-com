@@ -747,7 +747,7 @@ body {
   /* grid: max-content/ 1fr 1fr; */
   /* justify-items: end; */
   /* gap: 36px; */
-  place-items: center center;
+  place-content: center center;
   margin-top: 8px;
   margin-bottom: 27px;
 }
