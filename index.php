@@ -318,6 +318,7 @@
 
       const buttons = document.querySelectorAll(".slider-buttons");
 
+
       buttons.forEach((button) => {
         button.addEventListener("click", (e) => {
           e.stopPropagation();
@@ -326,6 +327,7 @@
           removeAnimation();
           const imageContainer = document.querySelector(".image-con");
           const containerWidth = imageContainer.clientWidth;
+
           console.log("width", containerWidth);
           if (e.target.id === "left") {
             //this let us know how to slide the images. If the button cliked was previous then we know we want to slide to the right
@@ -365,6 +367,19 @@
       buyBtn.addEventListener("click", (e) => {
         FOTOMOTO.API.showWindow(FOTOMOTO.API.PRINT, `${images[index].src}`);
       });
+
+      window.addEventListener("resize" , (e) => {
+
+
+        if (!imageBox.style.transform || imageBox.style.transform === "translateX(0px)") return;
+        const imageContainer = document.querySelector(".image-con");
+          const containerWidth = imageContainer.clientWidth;
+
+        translateX = -containerWidth * index;
+        imageBox.style.transform = `translateX(${translateX}px)`;
+        console.log("width resize after", containerWidth);
+
+      })
       // end of code for sliding images with buttons
 
       // const widthOfContainer = imageContainer.getBoundingClientRect().width;
