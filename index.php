@@ -323,7 +323,7 @@
         button.addEventListener("click", (e) => {
           e.stopPropagation();
           console.log(e.target.id);
-          navigator.vibrate(7);
+          // navigator.vibrate(7);
           removeAnimation();
           const imageContainer = document.querySelector(".image-con");
           const containerWidth = imageContainer.clientWidth;
