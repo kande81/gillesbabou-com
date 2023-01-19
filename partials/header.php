@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="https://use.typekit.net/zrk0gpj.css" />
     <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
     <title>gilles babou</title>
   </head>
   <body>
